@@ -15,5 +15,10 @@
 
 	<%= yield %>
 	</div>
+	<div id="timeCreated">
+		<% temp_time = Time.now %>
+		<% @time = temp_time.strftime("%d.%m.%Y %H:%M")%>
+		Page created: <%= @time  %>
+	</div>
 </body>
 </html>
