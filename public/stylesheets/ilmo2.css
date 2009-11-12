@@ -1,7 +1,7 @@
 body {
    margin: 5% auto;
    width: 80%;
-   background-color: FireBrick;
+   background-color: #8F1A1A;
 }
 
 a:link, a:visited {
@@ -14,6 +14,7 @@ a:link, a:visited {
    min-height: 35em;
    background-color: gray;
    padding: 1%;
+   padding-left: 2%;
 }
 
 #courseDescr {
