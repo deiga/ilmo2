@@ -16,3 +16,10 @@ a:link, a:visited {
    padding: 1%;
 }
 
+#courseDescr {
+   width: 50%;
+}
+
+h1 {
+   padding-bottom: 2%;
+}
