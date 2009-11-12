@@ -4,6 +4,10 @@ body {
    background-color: #8F1A1A;
 }
 
+h1 {
+   padding-bottom: 2%;
+}
+
 a:link, a:visited {
    color: White;
 }
@@ -19,10 +23,6 @@ a:link, a:visited {
 
 #courseDescr {
    width: 50%;
-}
-
-h1 {
-   padding-bottom: 2%;
 }
 
 #timeCreated {
