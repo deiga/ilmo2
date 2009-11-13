@@ -1,8 +1,8 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-bob:
+bobby:
   id: 1000001
-  username: bob
+  username: bobby
   salt: 1000
   enc_password: 77a0d943cdbace52716a9ef9fae12e45e2788d39 # test
 

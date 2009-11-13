@@ -7,15 +7,60 @@ class UserTest < ActiveSupport::TestCase
 
   def test_auth 
     #check that we can login we a valid user 
-    assert_equal  @bob, User.authenticate("bob", "test")    
+    assert_equal  @bobby, User.authenticate("bobby", "test")    
     #wrong username
     assert_nil    User.authenticate("nonbob", "test")
     #wrong password
-    assert_nil    User.authenticate("bob", "wrongpass")
+    assert_nil    User.authenticate("bobby", "wrongpass")
     #wrong login and pass
     assert_nil    User.authenticate("nonbob", "wrongpass")
   end
-
+  
+  def test_add_studentnumber
+    assert_equal @longbob, User.authenticate("longbob", "longtest")
+    @longbob.studentnumber = "013312882"
+    assert @longbob.save
+  end
+  
+  def test_edit_studentnumber
+    assert_equal @longbob, User.authenticate("longbob", "longtest")
+    @longbob.studentnumber = "013312882"
+    assert @longbob.save
+    @longbob.studentnumber = "123213"
+    assert !@longbob.save
+    @longbob.studentnumber = "012345678"
+    assert @longbob.save
+  end
+  
+  def test_wrong_studentnumbers
+    u = User.new
+    u.username = "Testperson1"
+    u.password = u.password_confirmation = "tester22"
+    u.studentnumber = "Lolcats"
+    assert !u.save
+    assert u.errors.invalid?('studentnumber')
+    u.studentnumber = "32423424"
+    assert !u.save
+    assert u.errors.invalid?('studentnumber')
+  end
+  
+  def test_add_real_name
+    assert_equal @longbob, User.authenticate("longbob", "longtest")
+    @longbob.realname = "Timo Sand"
+    assert @longbob.save
+  end
+  
+  def test_edit_real_name
+    assert_equal @longbob, User.authenticate("longbob", "longtest")
+    @longbob.realname = "Timo Sand"
+    assert @longbob.save
+    @longbob.realname = "Timo"
+    assert @longbob.save
+    @longbob.realname = "Timo Joachim Sand"
+    assert @longbob.save
+    @longbob.realname = ""
+    assert !@longbob.save
+  end
 
   def test_passwordchange
     # check success

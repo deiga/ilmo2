@@ -1,4 +1,13 @@
 
+<h3 id="login">Login</h3>
+<% form_for @user, :url => session_url do |f| %>
+    <%= f.label :username, 'Username' %>:
+    <%= f.text_field :username, :size => 15 %><br />
+    <%= f.label :password, 'Password' %>:
+    <%= f.password_field :password, :size => 15 %><br />
+		<%= link_to :Register, :new_user%> <%= submit_tag "OK"%>
+<% end %>
+
 <div id="courses">
 	<ul id="courseListing">
 	<% @courses.each do |course| -%>
