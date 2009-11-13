@@ -2,7 +2,6 @@ class CoursesController < ApplicationController
   # GET /courses
   # GET /courses.xml
   def index
-    @user = User.new
     @courses = Course.all
 
     respond_to do |format|
