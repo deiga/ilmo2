@@ -12,6 +12,14 @@
 		
 	<h1 id="ilmo_2.0">Ilmo 2.0</h1>
 	<p style="color: green"><%= flash[:notice] %></p>
+	<div id="logged_status">
+		Welcome, 
+		<% if session[:user] %>
+			<%= session[:user] %> (<%= link_to 'Logout', logout_url %>)
+		<% else %>
+			Guest (<%= link_to 'Login', sessions_url %>)
+		<% end %>
+	</div>
 
 	<%= yield %>
 	</div>

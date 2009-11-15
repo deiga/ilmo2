@@ -1,4 +1,9 @@
 class UsersController < ApplicationController
+
+  skip_before_filter :authentication_required  
+  
+  def new
+  end
   
   def create
     @user = User.new(@params[:user])
@@ -11,6 +16,6 @@ class UsersController < ApplicationController
         flash[:warning] = "Signup unsuccessful"
       end
     end
-
   end
+  
 end

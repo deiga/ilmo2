@@ -1,0 +1,11 @@
+<h2 id="register">Register</h2>
+
+<% form_for :user, :url => { :action => :create } do |f| %>
+	<%= f.label :username, 'Username:' %>
+	<%= f.text_field :username, :size => 15 %><br />
+	<%= f.label :password, 'Password:' %>
+	<%= f.password_field :username, :size => 15 %><br />
+	<%= f.label :password_confirmation, 'Repeat Password:' %>
+	<%= f.password_field :password_confirmation, :size => 15 %><br />
+	<%= submit_tag 'Register' %>
+<% end %>
