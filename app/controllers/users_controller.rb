@@ -5,17 +5,21 @@ class UsersController < ApplicationController
   def new
   end
   
+  def edit
+  end
+
   def create
-    @user = User.new(@params[:user])
+    @user = User.new(params[:user])
     if request.post?  
       if @user.save
-        session[:user] = User.authenticate(@user.username, @user.password)
-        flash[:message] = "Signup successful"
-        redirect_to :action => root_url
+#        session[:user] = User.authenticate(@user.username, @user.password)
+        flash[:notice] = "Account created"
+        redirect_to sessions_url
       else
-        flash[:warning] = "Signup unsuccessful"
+        flash[:notice] = "Signup unsuccessful"
+        redirect_to new_user_url
       end
     end
   end
-  
+
 end

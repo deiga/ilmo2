@@ -7,12 +7,19 @@ class SessionsController < ApplicationController
   end
   
   def create
-    session[:user] = true
-    redirect_to root_url
+    @user = User.new(params[:user])
+    if request.post? 
+      if User.authenticate(@user.username, @user.password)
+        session[:user] = User.authenticate(@user.username, @user.password)
+        redirect_to root_url
+      else
+        flash[:notice] = "Login unsuccessful"
+        redirect_to sessions_url
+      end
+    end
   end
   
   def login
-    
   end
   
   def logout
