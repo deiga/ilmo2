@@ -10,10 +10,11 @@ class SessionsController < ApplicationController
     @user = User.new(params[:user])
     if request.post? 
       if User.authenticate(@user.username, @user.password)
-        session[:user] = User.authenticate(@user.username, @user.password)
+        tmpuser = User.authenticate(@user.username, @user.password)
+        session[:user] = { :id => tmpuser.id, :username => tmpuser.username }
         redirect_to root_url
       else
-        flash[:notice] = "Login unsuccessful"
+        flash[:notice] = "Username and/or password were not correct!"
         redirect_to sessions_url
       end
     end

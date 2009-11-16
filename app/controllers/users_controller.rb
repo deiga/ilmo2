@@ -3,16 +3,45 @@ class UsersController < ApplicationController
   skip_before_filter :authentication_required  
   
   def new
+    @user = User.new
   end
   
   def edit
+    if params[:id].to_i != (session[:user][:id])
+      flash[:notice] = 'You are not allowed to edit other users!'
+      redirect_to root_url
+    end
+    @user = User.find session[:user][:id]
+  end
+  
+  def update
+    if request.put?
+      user = User.find params[:id]
+      user.realname = params[:user][:realname]
+      user.studentnumber = params[:user][:studentnumber]
+      user.password = user.password_confirmation = params[:user][:password]
+      if user.save
+        flash[:notice] = 'Account updated'
+        redirect_to root_url
+      else
+        flash[:notice] = 'Update unsuccessful'
+        redirect_to edit_user_url params[:id]
+      end
+    end
+  end
+  
+  def destroy
+    raise params.inspect
+    User.delete params[:id]
+    session[:user] = nil
+    flash[:notice] = "Account removed successfully"
+    redirect_to sessions_url
   end
 
   def create
     @user = User.new(params[:user])
     if request.post?  
       if @user.save
-#        session[:user] = User.authenticate(@user.username, @user.password)
         flash[:notice] = "Account created"
         redirect_to sessions_url
       else
