@@ -9,8 +9,8 @@ class SessionsController < ApplicationController
   def create
     @user = User.new(params[:user])
     if request.post? 
-      if User.authenticate(@user.username, @user.password)
-        tmpuser = User.authenticate(@user.username, @user.password)
+      tmpuser = User.authenticate(@user.username, @user.password)
+      if tmpuser
         session[:user] = { :id => tmpuser.id, :username => tmpuser.username }
         redirect_to root_url
       else

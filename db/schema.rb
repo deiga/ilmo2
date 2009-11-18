@@ -12,7 +12,8 @@
 ActiveRecord::Schema.define(:version => 20091118135411) do
 
   create_table "course_instances", :force => true do |t|
-    t.string   "title"
+    t.string   "season"
+    t.integer  "year"
     t.text     "description"
     t.integer  "course_id"
     t.datetime "created_at"

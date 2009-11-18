@@ -1,11 +1,11 @@
-<h2 id="courseTitle"><%=h @course.title %></h2>
+<h2 id="courseTitle"><%= @course.title %></h2>
 
 <p id="courseDescr">
   <%=h @course.description %>
 </p>
 <ul id="courseInstances">
 	<% @instances.each do |inst| -%>
-		<li><%= link_to inst.title, course_instance_url %></li>
+		<li><%= link_to "#{inst.season} #{inst.year}", course_instance_url(inst) %></li>
 	<% end -%>
 </ul>
 <p>

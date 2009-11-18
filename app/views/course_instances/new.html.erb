@@ -4,8 +4,17 @@
 <% form_for @course_instance do |f| %>
 	<%= f.error_messages %>
 <p>
-	<%= f.label :title, 'Instance name:' %><br />
-	<%= f.text_field :title, :size => 20 %>
+	<strong><%= f.label :year, 'Year' %></strong><br />
+	<%= f.text_field :year, :size => 15 %>
+</p>
+<p>
+	<strong><%= f.label :season, 'Season' %></strong><br />
+	Autumn
+	<%= f.radio_button :season, 'Autumn' %><br />
+	Summer
+	<%= f.radio_button :season, 'Summer' %><br />
+	Fall
+	<%= f.radio_button :season, 'Fall' %><br />
 </p>
 <p>
 	<%= f.label :description, 'Description:' %><br />

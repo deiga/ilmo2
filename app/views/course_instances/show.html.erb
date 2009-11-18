@@ -1,2 +1,6 @@
-<h1>CourseInstances#show</h1>
-<p>Find me in app/views/course_instances/show.html.erb</p>
+
+<h2 id="instance_title"><%= @ci.course.title %> - <%= "#{@ci.season} #{@ci.year}"%></h2>
+
+<p id="instDescr">
+	<%= @ci.description %>
+</p>

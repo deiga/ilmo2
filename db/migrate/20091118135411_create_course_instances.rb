@@ -1,7 +1,8 @@
 class CreateCourseInstances < ActiveRecord::Migration
   def self.up
     create_table :course_instances do |t|
-      t.string :title
+      t.string :season
+      t.integer :year
       t.text :description
       t.belongs_to :course
 
