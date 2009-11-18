@@ -2,9 +2,9 @@
 
 <% form_for @user, :url => { :action => :create } do |f| %>
 	<%= f.label :username, 'Username:' %>
-	<%= f.text_field :username, :size => 15 %><br />
+	<%= f.text_field :username, :size => 15 %>&nbsp;<span id="hint">(At least 4 characters)</span><br />
 	<%= f.label :password, 'Password:' %>
-	<%= f.password_field :password, :size => 15 %><br />
+	<%= f.password_field :password, :size => 15 %>&nbsp;<span id="hint">(At least 8 characters)</span><br />
 	<%= f.label :password_confirmation, 'Repeat Password:' %>
 	<%= f.password_field :password_confirmation, :size => 15 %><br />
 	<%= submit_tag 'Register' %>

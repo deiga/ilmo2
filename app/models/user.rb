@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   validates_presence_of :username, :password, :message => "can't be blank"
   validates_uniqueness_of :username, :on => :create, :message => "must be unique"
   validates_uniqueness_of :studentnumber, :allow_nil => true
-  validates_length_of :username, :within => 5..40, :message => "must be present"
+  validates_length_of :username, :within => 4..40, :message => "must be present"
   validates_length_of :password, :within => 8..40, :message => "must be present"
   validates_format_of :studentnumber, :allow_nil => true, :with => /\A\d{9}\Z/
   validates_format_of :realname, :allow_nil => true, :with => /^\w+[\s{1}\w+]*$/

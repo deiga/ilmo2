@@ -28,7 +28,7 @@ a:link, a:visited {
    text-align: right;
 }
 
-#notice {
+#notice, #message {
    border: 2px solid red;
    padding: 1em;
    width: 70%;
@@ -36,4 +36,13 @@ a:link, a:visited {
    margin-bottom: 2em;
    background-color: #f0f0f0;
    font: bold smaller sans-serif;   
+}
+
+#message {
+   border-color: green;
+}
+
+#hint {
+   color: White;
+   font: bold smaller sans-serif;
 }

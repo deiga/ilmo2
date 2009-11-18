@@ -21,7 +21,7 @@ class UsersController < ApplicationController
       user.studentnumber = params[:user][:studentnumber]
       user.password = user.password_confirmation = params[:user][:password]
       if user.save
-        flash[:notice] = 'Account updated'
+        flash[:msg] = 'Account updated'
         redirect_to root_url
       else
         flash[:notice] = 'Update unsuccessful'
@@ -34,7 +34,7 @@ class UsersController < ApplicationController
     raise params.inspect
     User.delete params[:id]
     session[:user] = nil
-    flash[:notice] = "Account removed successfully"
+    flash[:msg] = "Account removed successfully"
     redirect_to sessions_url
   end
 
@@ -42,7 +42,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if request.post?  
       if @user.save
-        flash[:notice] = "Account created"
+        flash[:msg] = "Account created"
         redirect_to sessions_url
       else
         flash[:notice] = "Signup unsuccessful"

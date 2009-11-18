@@ -16,6 +16,11 @@
 			<%= flash[:notice] %>
 		</div>
 	<% end -%>
+	<% if flash[:msg] -%>
+		<div id="message">
+			<%= flash[:msg] %>
+		</div>
+	<% end -%>
 	<div id="logged_status">
 		Welcome, 
 		<% if session[:user] %>
