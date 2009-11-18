@@ -14,6 +14,7 @@ class CoursesController < ApplicationController
   # GET /courses/1.xml
   def show
     @course = Course.find(params[:id])
+    @instances = CourseInstance.find(:all, :conditions => {:course_id => params[:id]}, :order => "title DESC")
 
     respond_to do |format|
       format.html # show.html.erb

@@ -1,15 +1,16 @@
 
 
 <% form_for @user do |f| %>
+	<%= f.error_messages %>
 	<%= f.label :username, 'Username:' %>
 	<%= f.text_field :username, :size => 15, :disabled => 'disabled' %><br />
 	<%= f.label :realname, 'Real name:' %>
 	<%= f.text_field :realname, :size => 15 %><br />
 	<%= f.label :studentnumber, 'Studentnumber:' %>
-	<%= f.text_field :studentnumber, :size => 15 %><br />
+	<%= f.text_field :studentnumber, :size => 15 %>&nbsp;<span id="hint">(9 characters)</span><br />
 	<%= f.label :password, 'New password:' %>
-	<%= f.password_field :password, :size => 15 %><br />
+	<%= f.password_field :password, :size => 15 %>&nbsp;<span id="hint">(At least 8 characters)</span><br />
 	<%= f.label :password_confirmation, 'Repeat password:' %>
 	<%= f.password_field :password_confirmation, :size => 15 %><br />
-  <%= link_to 'Home', root_url %> <%= link_to 'Remove account', user_url, { :method => :delete, :confirm => 'Are you sure you want to delete your account?' }%> <%= submit_tag 'Update' %>
+  <%= link_to 'Home', root_url %> <%= link_to 'Remove account', user_url, { :method => :delete, :confirm => 'Are you sure you want to delete your account?' }%> <%= f.submit 'Update' %>
 <% end %>

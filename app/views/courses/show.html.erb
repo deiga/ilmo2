@@ -3,9 +3,15 @@
 <p id="courseDescr">
   <%=h @course.description %>
 </p>
+<ul id="courseInstances">
+	<% @instances.each do |inst| -%>
+		<li><%= link_to inst.title, course_instance_url %></li>
+	<% end -%>
+</ul>
 <p>
 	<strong>Credits: </strong><%= @course.credits %>
 </p>
 
 <%-# link_to 'Edit', edit_course_path(@course) %> |
-<%= link_to 'Back', root_url %>
+<%= link_to 'Back', root_url %> |
+<%= link_to 'New course instance', new_course_instance_url( :course_id => @course ) %>
