@@ -24,7 +24,11 @@ class SessionsController < ApplicationController
   end
   
   def logout
-    reset_session
-    redirect_to root_url
+    begin
+      reset_session
+    rescue
+    ensure
+      redirect_to root_url
+    end
   end
 end

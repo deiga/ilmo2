@@ -15,11 +15,15 @@ class UsersController < ApplicationController
   end
   
   def update
+
     if request.put?
       user = User.find params[:id]
       user.realname = params[:user][:realname]
       user.studentnumber = params[:user][:studentnumber]
-      user.password = user.password_confirmation = params[:user][:password]
+      if params[:user][:password].length > 0
+        user.password = params[:user][:password]
+        user.password_confirmation = params[:user][:password_confirmation]
+      end
       if user.save
         flash[:msg] = 'Account updated'
         redirect_to root_url
