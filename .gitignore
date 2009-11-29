@@ -7,3 +7,4 @@ doc/app
 *.log
 config/database.yml
 config/database.example.yml
+config/capistrano_database.rb

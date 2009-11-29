@@ -1,3 +1,5 @@
+require 'config/capistrano_database'
+
 set :application, "ilmo2.0"
 set :repository,  "git://github.com/deiga/ilmo2.git"
 set :branch, "master"
