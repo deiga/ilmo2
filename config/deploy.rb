@@ -1,5 +1,6 @@
 set :application, "ilmo2.0"
 set :repository,  "git://github.com/deiga/ilmo2.git"
+set :branch, "master"
 
 set :scm, :git
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`

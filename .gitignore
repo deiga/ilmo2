@@ -5,3 +5,4 @@ doc/api
 doc/app
 .DS_Store
 *.log
+config/database.yml
