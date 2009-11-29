@@ -4,3 +4,4 @@ tmp/restart.txt
 doc/api
 doc/app
 .DS_Store
+*.log
