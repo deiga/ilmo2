@@ -9,27 +9,36 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091118135411) do
+ActiveRecord::Schema.define(:version => 20091129222215) do
 
   create_table "course_instances", :force => true do |t|
     t.string   "season"
     t.integer  "year"
     t.text     "description"
-    t.integer  "course_id"
+    t.integer  "course_id",   :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "courses", :force => true do |t|
-    t.string   "title"
-    t.text     "description"
+    t.string   "title",                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     :null => false
+    t.text     "description", :default => "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "credits",     :default => 0
   end
 
+  create_table "exercise_groups", :force => true do |t|
+    t.integer  "course_instance_id",              :null => false
+    t.string   "class"
+    t.string   "weekday",            :limit => 3
+    t.string   "time_of_day"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", :force => true do |t|
-    t.string   "username"
+    t.string   "username",      :limit => 40, :null => false
     t.string   "realname"
     t.string   "studentnumber"
     t.string   "enc_password"

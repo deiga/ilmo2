@@ -1,7 +1,6 @@
 require 'digest/sha1'
 
 class User < ActiveRecord::Base
-  validates_presence_of :username, :password, :on => :create, :message => "can't be blank"
   validates_uniqueness_of :username, :on => :create, :message => "must be unique"
   validates_uniqueness_of :studentnumber, :allow_nil => true
   validates_length_of :username, :within => 4..40, :message => "must be present"

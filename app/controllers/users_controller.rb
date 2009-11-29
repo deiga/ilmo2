@@ -4,6 +4,11 @@ class UsersController < ApplicationController
   
   def new
     @user = User.new
+    
+    respond_to do |format|
+      format.html # new.html.erb
+      format.xml  { render :xml => @user }
+    end
   end
   
   def edit
@@ -48,13 +53,16 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(params[:user])
-    if request.post?  
+    
+    respond_to do |format|
       if @user.save
-        flash[:msg] = "Account created"
-        redirect_to sessions_url
+        flash[:msg] = 'Account created.'
+        format.html { redirect_to sessions_url }
+        format.xml  { render :xml => @user, :status => :created, :location => @user }
       else
-        flash[:notice] = "Signup unsuccessful"
-        redirect_to new_user_url
+        flash[:notice] = 'Signup unsuccessful.'
+        format.html { render :action => "new" }
+        format.xml  { render :xml => @course.errors, :status => :unprocessable_entity }
       end
     end
   end

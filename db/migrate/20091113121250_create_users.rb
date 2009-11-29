@@ -1,7 +1,7 @@
 class CreateUsers < ActiveRecord::Migration
   def self.up
     create_table :users do |t|
-      t.string :username
+      t.string :username, :null => false, :limit => 40
       t.string :realname
       t.string :studentnumber
       t.string :enc_password
