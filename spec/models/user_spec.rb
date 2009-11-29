@@ -22,14 +22,14 @@ describe User do
   end
 
   describe "validation" do
-    it "should require username to be between 3 and 15 characters" do
+    it "should require username to be between 4 and 40 characters" do
       user = User.new(@valid_attributes)
       user.should be_valid
       
-      user.username = "ab"
+      user.username = "abc"
       user.should_not be_valid
       
-      user.username = "a"*16
+      user.username = "a"*46
       user.should_not be_valid
     end
     
