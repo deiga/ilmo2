@@ -28,9 +28,8 @@ describe CoursesController do
       
       # make get request to application
       get :index
-      
       # should assign @courses with 3 objects from database
-      assigns(:courses).should have(3).records
+      assigns(:courses).should have(3).members
     end
     
     # ..but instead use mocks 

@@ -18,10 +18,10 @@ class CourseInstancesController < ApplicationController
   end
 
   def create
-#    raise params.inspect
+    #raise params.inspect
     par = params[:course_instance]
     @course = Course.find(par[:course_id])
-    @ci = CourseInstance.new :season => par[:season], :year => par[:year].to_i, :description => par[:description], :course_id => par[:course_id].to_i
+    @ci = CourseInstance.new :season => get_season(params[:startdate][:month]), :description => par[:description], :course_id => par[:course_id].to_i, :start => format_year(params[:startdate]), :end => format_year(params[:enddate])
     respond_to do |format|
       if @ci.save
         flash[:msg] = 'Course instance created successfully'
@@ -36,6 +36,20 @@ class CourseInstancesController < ApplicationController
   end
 
   def destroy
+  end
+  
+  def get_season(month)
+    if month.to_i <= 5
+      'Autumn'
+    elsif month.to_i > 5 && month.to_i < 9
+      'Summer'
+    else
+      'Fall'
+    end
+  end
+  
+  def format_year(date_array)
+    date_array[:year]+"-"+date_array[:month]+"-"+date_array[:day]
   end
 
 end

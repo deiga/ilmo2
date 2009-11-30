@@ -5,7 +5,7 @@
 </p>
 <ul id="courseInstances">
 	<% @instances.each do |inst| -%>
-		<li><%= link_to "#{inst.season} #{inst.year}", course_instance_url(inst) %></li>
+		<li><%= link_to "#{inst.season} #{inst.start.year}", course_instance_url(inst) %></li>
 	<% end -%>
 </ul>
 <p>

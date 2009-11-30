@@ -1,6 +1,8 @@
 
-<h2 id="instance_title"><%= @ci.course.title %> - <%= "#{@ci.season} #{@ci.year}"%></h2>
+<h2 id="instance_title"><%= @ci.course.title %> - <%= "#{@ci.season} #{@ci.start.year}"%></h2>
 
 <p id="instDescr">
 	<%= @ci.description %>
 </p>
+
+<%= link_to 'Back', @ci.course %> |
