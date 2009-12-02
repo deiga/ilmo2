@@ -2,6 +2,7 @@ class CourseInstancesController < ApplicationController
   
   def show
     @ci = CourseInstance.find params[:id]
+    @egroups = ExerciseGroup.find(:all, :conditions => {:course_instance_id => params[:id]}, :order => "id ASC")
   end
   
   def new
