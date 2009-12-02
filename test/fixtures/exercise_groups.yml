@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  course_instance: 
+  weekday: MyString
+  time_of_day: MyString
+  class: MyString
+
+two:
+  course_instance: 
+  weekday: MyString
+  time_of_day: MyString
+  class: MyString
