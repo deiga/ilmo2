@@ -1,0 +1,20 @@
+
+<h2 id="new_instance">New Exercise group - <%= @ci.course.title %></h2>
+
+<% form_for @eg do |f| %>
+	<%= f.error_messages %>
+
+<p>
+	<%= f.label :start, 'Starting date:'%>
+	<%= select_date Date.today, :order => [:day, :month, :year], :prefix => :startdate %><br />
+	<%= f.label :end, 'Ending date:'%>
+	<%= select_date Date.today, :order => [:day, :month, :year], :prefix => :enddate %><br />
+</p>
+<p>
+	<%= f.label :description, 'Description:' %><br />
+	<%= f.text_area :description %>
+</p>
+
+	<%= f.hidden_field :course_id, :value => @ci.id %>
+	<%= link_to 'Back', course_instance_url( @ci )%><%= f.submit 'Create' %>
+<% end %>
