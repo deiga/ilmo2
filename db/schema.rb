@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091129235319) do
+ActiveRecord::Schema.define(:version => 20091202200437) do
 
   create_table "course_instances", :force => true do |t|
     t.string   "season"
@@ -27,6 +27,15 @@ ActiveRecord::Schema.define(:version => 20091129235319) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "credits",     :default => 0
+  end
+
+  create_table "exercise_groups", :force => true do |t|
+    t.string   "weekday",            :limit => 3
+    t.string   "time_of_day"
+    t.string   "class"
+    t.integer  "course_instance_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", :force => true do |t|
