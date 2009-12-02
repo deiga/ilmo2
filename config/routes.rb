@@ -4,7 +4,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :courses do |courses|
     courses.resources :instances, :controller => 'course_instances' do |cis|
-      cis.resources :exercise_groups
+      cis.resources :groups, :controller => 'exercise_groups'
     end
   end
   map.resources :users
