@@ -1,0 +1,2 @@
+module ExerciseGroupHelper
+end
