@@ -1,5 +1,8 @@
 class ExerciseGroupsController < ApplicationController
+  
   def new
+    @ci = CourseInstance.find params[:instance_id]
+    @eg = ExerciseGroup.new
   end
 
   def create

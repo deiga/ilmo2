@@ -20,10 +20,7 @@ class SessionsController < ApplicationController
     end
   end
   
-  def login
-  end
-  
-  def logout
+  def destroy
     begin
       reset_session
     rescue
