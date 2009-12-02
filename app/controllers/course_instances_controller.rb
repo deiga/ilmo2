@@ -6,7 +6,7 @@ class CourseInstancesController < ApplicationController
   end
   
   def new
-    @course = Course.find(params[:course_id])
+    @course = Course.find params[:course_id]
     @ci = CourseInstance.new
     
     respond_to do |format|

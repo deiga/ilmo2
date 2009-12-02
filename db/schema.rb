@@ -29,15 +29,6 @@ ActiveRecord::Schema.define(:version => 20091129235319) do
     t.integer  "credits",     :default => 0
   end
 
-  create_table "exercise_groups", :force => true do |t|
-    t.integer  "course_instance_id",              :null => false
-    t.string   "class"
-    t.string   "weekday",            :limit => 3
-    t.string   "time_of_day"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "users", :force => true do |t|
     t.string   "username",      :limit => 40, :null => false
     t.string   "realname"
