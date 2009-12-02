@@ -3,11 +3,17 @@
 <p id="courseDescr">
   <%=h @course.description %>
 </p>
-<ul id="courseInstances">
-	<% @instances.each do |inst| -%>
-		<li><%= link_to "#{inst.season} #{inst.start.year}", course_instance_url(inst.course_id, inst.id) %></li>
-	<% end -%>
-</ul>
+<p id="instances">
+	<% if @course.course_instances.any? %>
+	<ul>
+		<% @instances.each do |inst| %>
+   	<li><%= link_to "#{inst.season} #{inst.start.year}", instance_url(inst.id) %></li>
+		<% end %>
+	</ul>
+	<% else %>
+		No course instances.
+	<% end %>
+</p>
 <p>
 	<strong>Credits: </strong><%= @course.credits %>
 </p>

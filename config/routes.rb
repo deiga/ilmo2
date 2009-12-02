@@ -1,8 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
 
-  map.resources :courses do |courses|
-    courses.resources :instances, :controller => 'course_instances' do |cis|
-      cis.resources :exercise_groups
+  map.resources :courses, :shallow => true do |course|
+    course.resources :instances, :controller => 'course_instances' do |ci|
+      ci.resources :groups, :controller => 'exercise_groups'
     end
   end
   map.resources :users, :except => [:index]

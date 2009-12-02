@@ -1,8 +1,19 @@
 
-<h2 id="instance_title"><%= @ci.course.title %> - <%= "#{@ci.season} #{@ci.start.year}"%></h2>
+<h2 id="instance_title"><%= @cinstances.course.title %> - <%= "#{@cinstances.season} #{@cinstances.start.year}"%></h2>
 
 <p id="instDescr">
-	<%= @ci.description %>
+	<%= @cinstances.description %>
+</p>
+<p id="groups">
+	<% if @cinstances.exercise_groups.any? %>
+	<ul>
+		<% @egroups.each do |eg| %>
+   	<li><%= link_to "#{eg.weekday} #{eg.time_of_day}", group_url(eg) %></li>
+		<% end %>
+	</ul>
+	<% else %>
+		No exercise groups.
+	<% end %>
 </p>
 
-<%= link_to 'Back', @ci.course %> | <%= link_to 'New Exercise group', new_course_instance_exercise_group_url(@ci.course.id, @ci.id) %>
+<%= link_to 'Back', @cinstances.course %> | <%= link_to 'New Exercise group', new_instance_group_url(@cinstances.id) %>
