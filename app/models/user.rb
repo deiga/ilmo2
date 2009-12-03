@@ -1,12 +1,12 @@
 require 'digest/sha1'
 
 class User < ActiveRecord::Base
-  validates_uniqueness_of :username, :on => :create, :message => "must be unique"
-  validates_uniqueness_of :studentnumber, :allow_nil => true
-  validates_length_of :username, :within => 4..40, :message => "must be present"
-  validates_length_of :password, :within => 8..40, :on => :create, :message => "must be present"
-  validates_length_of :password, :within => 8..40, :allow_nil => true, :on => :update, :message => "must be present"
-  validates_format_of :studentnumber, :allow_nil => true, :with => /\A\d{9}\Z/
+  validates_uniqueness_of :username, :on => :create
+  validates_length_of :username, :in => 4..40
+  validates_length_of :password, :in => 5..40, :on => :create
+  validates_length_of :password, :in => 5..40, :allow_blank => true, :on => :update, :message => "must be present"
+  validates_length_of :realname, :in => 3..20, :allow_blank => true
+  validates_length_of :studentnumber, :is => 9, :allow_blank => true
   validates_confirmation_of :enc_password, :message => "should match confirmation"
   
   attr_protected :id, :salt

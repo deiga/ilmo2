@@ -6,15 +6,20 @@ class ApplicationController < ActionController::Base
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
 
   # Scrub sensitive parameters from your log
-  # filter_parameter_logging :password
+  filter_parameter_logging :password
+  
+  include UserAuthentication # /lib/user_authentication.rb
   
   before_filter :authentication_required
   
+  protected
+  
   def authentication_required
-    unless session[:user]
-      flash[:warning] = "Please login to continue"
-      redirect_to sessions_url
-      return false # break filter chain
+    if logged_in?
+      return true
+    else
+      redirect_to login_url
     end
   end
+  
 end

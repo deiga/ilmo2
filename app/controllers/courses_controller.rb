@@ -7,14 +7,15 @@ class CoursesController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @courses }
+    #  format.pdf  { send_data PdfExport.all_courses(@courses) }
     end
   end
 
   # GET /courses/1
   # GET /courses/1.xml
   def show
-    @course = Course.find(params[:id])
-    @instances = CourseInstance.find(:all, :conditions => {:course_id => params[:id]}, :order => "start, season ASC")
+    @course = Course.find params[:id] 
+    @course_instances = CourseInstance.find(:all, :conditions => {:course_id => params[:id]}, :order => "start, season ASC")
 
     respond_to do |format|
       format.html # show.html.erb

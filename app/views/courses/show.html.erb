@@ -6,8 +6,8 @@
 <p id="instances">
 	<% if @course.course_instances.any? %>
 	<ul>
-		<% @instances.each do |inst| %>
-   	<li><%= link_to "#{inst.season} #{inst.start.year}", instance_url(inst.id) %></li>
+		<% @course_instances.each do |inst| %>
+   	<li><%= link_to "#{inst.season} #{inst.start.year}", inst %></li>
 		<% end %>
 	</ul>
 	<% else %>
@@ -20,4 +20,4 @@
 
 <%-# link_to 'Edit', edit_course_path(@course) %> |
 <%= link_to 'Back', root_url %> |
-<%= link_to 'New course instance', new_course_instance_url(@course.id) %>
+<%= link_to 'New course instance', new_course_course_instance_url(@course) %>

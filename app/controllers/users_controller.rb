@@ -12,50 +12,38 @@ class UsersController < ApplicationController
   end
   
   def edit
-    if params[:id].to_i != (session[:user][:id])
-      flash[:notice] = 'You are not allowed to edit other users!'
-      redirect_to root_url
-    end
-    @user = User.find session[:user][:id]
+    #if params[:id].to_i != current_user
+     # flash[:notice] = 'You are not allowed to edit other users!'
+      #redirect_to root_url
+#    end
+    @user = User.find params[:id]
   end
   
   def update
 
-    user = User.find params[:id]
-    user.realname = params[:user][:realname]
-    user.studentnumber = params[:user][:studentnumber]
-    if user.studentnumber.empty?
-      user.studentnumber = nil
-    end
-    if params[:user][:password].length > 0
-      user.password = params[:user][:password]
-      user.password_confirmation = params[:user][:password_confirmation]
-    end
-    if user.save
+    @user = User.find params[:id]
+    if @user.update_attributes(params[:user])
       flash[:msg] = 'Account updated'
       redirect_to root_url
     else
-      raise user.errors.inspect
       flash[:notice] = 'Update unsuccessful'
       redirect_to edit_user_url params[:id]
     end
   end
   
   def destroy
-    raise params.inspect
-    User.delete params[:id]
-    session[:user] = nil
-    flash[:msg] = "Account removed successfully"
-    redirect_to sessions_url
+    log_user_out!
+    current_user.destroy
+    redirect_to login_url
   end
 
   def create
-    @user = User.new(params[:user])
+    @user = User.new params[:user]
     
     respond_to do |format|
       if @user.save
         flash[:msg] = 'Account created.'
-        format.html { redirect_to sessions_url }
+        format.html { redirect_to login_url }
         format.xml  { render :xml => @user, :status => :created, :location => @user }
       else
         flash[:notice] = 'Signup unsuccessful.'

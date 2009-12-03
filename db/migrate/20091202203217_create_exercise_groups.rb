@@ -3,7 +3,8 @@ class CreateExerciseGroups < ActiveRecord::Migration
     create_table :exercise_groups do |t|
       t.belongs_to :course_instance
       t.string :weekday
-      t.string :time_of_day
+      t.string :start
+      t.string :end
       t.string :place
 
       t.timestamps

@@ -2,21 +2,15 @@ class SessionsController < ApplicationController
   
   skip_before_filter :authentication_required
   
-  def index
-    
-  end
-  
   def create
     @user = User.new(params[:user])
-    if request.post? 
-      tmpuser = User.authenticate(@user.username, @user.password)
-      if tmpuser
-        session[:user] = { :id => tmpuser.id, :username => tmpuser.username }
-        redirect_to root_url
-      else
-        flash[:notice] = "Username and/or password were not correct!"
-        redirect_to sessions_url
-      end
+    authenticated_user = User.authenticate(@user.username, @user.password)
+    if authenticated_user
+      log_user_in(authenticated_user)
+      redirect_to root_url
+    else
+      flash[:notice] = "Username and/or password were not correct!"
+      redirect_to login_url
     end
   end
   

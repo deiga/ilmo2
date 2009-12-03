@@ -1,17 +1,20 @@
 class CourseInstancesController < ApplicationController
   
+  def index
+    @course_instances = CourseInstance.all
+  end
+  
   def show
-    @cinstances = CourseInstance.find params[:id]
-    @egroups = ExerciseGroup.find(:all, :conditions => {:course_instance_id => params[:id]}, :order => "id ASC")
+    @course_instances = CourseInstance.find params[:id]
   end
   
   def new
     @course = Course.find params[:course_id]
-    @cinstances = CourseInstance.new
+    @course_instance = CourseInstance.new
     
     respond_to do |format|
       format.html # new.html.erb
-      format.xml  { render :xml => @cinstances }
+      format.xml  { render :xml => @course_instances }
     end
   end
   
@@ -19,20 +22,19 @@ class CourseInstancesController < ApplicationController
   end
 
   def create
-    #raise params.inspect
     par = params[:course_instance]
-    @course = Course.find(par[:course_id])
-    @cinstances = CourseInstance.new :season => get_season(params[:startdate][:month]), :description => par[:description], :course_id => par[:course_id].to_i, :start => format_year(params[:startdate]), :end => format_year(params[:enddate])
+    @course = Course.find(params[:course_id])
+    @course_instance = CourseInstance.new :season => get_season(params[:startdate][:month]), :description => par[:description], :course => @course, :start => format_year(params[:startdate]), :end => format_year(params[:enddate])
     
     respond_to do |format|
-      if @cinstances.save
+      if @course_instance.save
         flash[:msg] = 'Course instance created successfully'
         format.html { redirect_to course_url(params[:course_instance][:course_id]) }
-        format.xml  { render :xml => @cinstances, :status => :created, :location => ci }
+        format.xml  { render :xml => @course_instance, :status => :created, :location => course_instance }
       else
         flash[:notice] = "Creation unsuccessful"
         format.html { render :action => "new" }
-        format.xml  { render :xml => @cinstances.errors, :status => :unprocessable_entity }
+        format.xml  { render :xml => @course_instance.errors, :status => :unprocessable_entity }
       end
     end
   end

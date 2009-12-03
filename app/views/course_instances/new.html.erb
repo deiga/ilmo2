@@ -1,7 +1,7 @@
 
 <h2 id="new_instance">New instance - <%= @course.title %></h2>
 
-<% form_for @cinstances do |f| %>
+<% form_for [@course, @course_instance] do |f| %>
 	<%= f.error_messages %>
 
 <p>
@@ -15,6 +15,7 @@
 	<%= f.text_area :description %>
 </p>
 
-	<%= f.hidden_field :course_id, :value => @course.id %>
-	<%= link_to 'Back', course_url( @course )%><%= f.submit 'Create' %>
+	<%= f.submit 'Create' %>
 <% end %>
+
+<%= link_to 'Back', course_url( @course )%>

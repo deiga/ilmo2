@@ -32,7 +32,8 @@ ActiveRecord::Schema.define(:version => 20091202203217) do
   create_table "exercise_groups", :force => true do |t|
     t.integer  "course_instance_id"
     t.string   "weekday"
-    t.string   "time_of_day"
+    t.string   "start"
+    t.string   "end"
     t.string   "place"
     t.datetime "created_at"
     t.datetime "updated_at"
