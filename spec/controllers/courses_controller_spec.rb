@@ -14,12 +14,18 @@ describe CoursesController do
   before(:each) do
      @course_mock = mock_model(Course)
   end
-  
-  describe "index" do
+
+    describe "index" do
+      
+    it "should redirect to login url" do
+      get :index
+      response.should redirect_to(login_url)
+    end
 
     # hitting database, this behaviour should be tested at unit tests
     # so we don't want to do this..
     it "should find all courses from db" do
+      fake_as_authenticated!
       
       # test-database is empty so we have to create something in it
       3.times {
@@ -28,6 +34,7 @@ describe CoursesController do
       
       # make get request to application
       get :index
+      
       # should assign @courses with 3 objects from database
       assigns(:courses).should have(3).members
     end
@@ -52,7 +59,6 @@ describe CoursesController do
 
     it "should find correct course" do       
        # our before filter works also in here!         
-       controller.should_receive(:authorize).and_return(true)
        fake_as_authenticated!
 
        course_mock = mock_model(Course)

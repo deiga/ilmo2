@@ -56,7 +56,7 @@ end
 module TestHelper
   
   def fake_as_authenticated!
-    controller.stub!(:is_authenticated?).and_return(true)
+    controller.stub!(:authentication_required).and_return(true)
   end
 end
  

@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   validates_length_of :password, :in => 5..40, :allow_blank => true, :on => :update, :message => "must be present"
   validates_length_of :realname, :in => 3..20, :allow_blank => true
   validates_length_of :studentnumber, :is => 9, :allow_blank => true
-  validates_confirmation_of :enc_password, :message => "should match confirmation"
+  validates_confirmation_of :password, :message => "should match confirmation"
   
   attr_protected :id, :salt
 
