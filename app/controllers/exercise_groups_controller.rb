@@ -17,11 +17,11 @@ class ExerciseGroupsController < ApplicationController
     
     respond_to do |format|
       if @exercise_group.save
-        flash[:msg] = 'Exercise group created successfully'
+        flash[:msg] = :group_successful
         format.html { redirect_to course_instance_url(params[:course_instance_id]) }
         format.xml  { render :xml => @exercise_group, :status => :created, :location => exercise_group }
       else
-        flash[:notice] = "Creation unsuccessful"
+        flash[:notice] = :group_unsuccessful
         format.html { render :action => "new" }
         format.xml  { render :xml => @exercise_group.errors, :status => :unprocessable_entity }
       end

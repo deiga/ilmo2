@@ -23,10 +23,10 @@ class UsersController < ApplicationController
 
     @user = User.find params[:id]
     if @user.update_attributes(params[:user])
-      flash[:msg] = 'Account updated'
+      flash[:msg] = t :account_updated
       redirect_to root_url
     else
-      flash[:notice] = 'Update unsuccessful'
+      flash[:notice] = t :update_unsuccessful
       redirect_to edit_user_url params[:id]
     end
   end
@@ -42,11 +42,11 @@ class UsersController < ApplicationController
     
     respond_to do |format|
       if @user.save
-        flash[:msg] = 'Account created.'
+        flash[:msg] = t :account_created
         format.html { redirect_to login_url }
         format.xml  { render :xml => @user, :status => :created, :location => @user }
       else
-        flash[:notice] = 'Signup unsuccessful.'
+        flash[:notice] = t :account_not_created
         format.html { render :action => "new" }
         format.xml  { render :xml => @course.errors, :status => :unprocessable_entity }
       end

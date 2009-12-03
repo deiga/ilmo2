@@ -15,7 +15,7 @@ class CoursesController < ApplicationController
   # GET /courses/1.xml
   def show
     @course = Course.find params[:id] 
-    @course_instances = CourseInstance.find(:all, :conditions => {:course_id => params[:id]}, :order => "start, season ASC")
+    @course_instances = CourseInstance.find_by_course_in_order @course.id
 
     respond_to do |format|
       format.html # show.html.erb
@@ -46,10 +46,11 @@ class CoursesController < ApplicationController
 
     respond_to do |format|
       if @course.save
-        flash[:notice] = 'Course was successfully created.'
+        flash[:msg] = :course_successful
         format.html { redirect_to(@course) }
         format.xml  { render :xml => @course, :status => :created, :location => @course }
       else
+        flash[:notice] = :course_unsuccessful
         format.html { render :action => "new" }
         format.xml  { render :xml => @course.errors, :status => :unprocessable_entity }
       end

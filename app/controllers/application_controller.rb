@@ -12,6 +12,8 @@ class ApplicationController < ActionController::Base
   
   before_filter :authentication_required
   
+  before_filter :set_locale
+  
   protected
   
   def authentication_required
@@ -20,6 +22,13 @@ class ApplicationController < ActionController::Base
     else
       redirect_to login_url
     end
+  end
+  
+  private
+  
+  def set_locale
+    session[:locale] = params[:locale] if params[:locale]
+    I18n.locale = session[:locale]
   end
   
 end

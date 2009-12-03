@@ -1,0 +1,25 @@
+de:
+   welcome:
+      "Willkommen"
+   guest:
+      "Gast"
+   account_created:
+      "Neuer Benutzer erstellt"
+   account_not_created:
+      "Benutzer erstellung unerfolgreich"
+   update_successful:
+      "Datenbearbeiting erfolgreich"
+   update_unsuccessful:
+      "Datenbearbeiting unerfolgreich"
+   instance_successful:
+      "Kursinstanz erstellt"
+   instance_unsuccessful:
+      "Kursinstanz erstellung unerfolgreich"
+   group_successful:
+      "Gruppen erstellt"
+   group_unsuccessful:
+      "Gruppen erstellung unerfolgreich"
+   course_successful:
+      "Kurs erstellt"
+   course_unsuccessful:
+      "Kurs erstellung unerfolgreich"

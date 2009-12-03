@@ -1,0 +1,25 @@
+fi:
+   welcome:
+      "Tervetuloa"
+   guest:
+      "Vieras"
+   account_created:
+      "Käyttäjätili luotu onnistuneesti"
+   account_not_created:
+      "Käyttäjätiliä ei voitu luoda"
+   update_successful:
+      "Tietoja muokattu onnistuneesti"
+   update_unsuccessful:
+      "Tietoja ei pystytty muokkamaan"
+   instance_successful:
+      "Kurssin ilmentymä luotu onnistuneesti"
+   instance_unsuccessful:
+      "Kurssin ilmentymää ei voitu luoda"
+   group_successful:
+      "Laskariryhmä luotu onnistuneesti"
+   group_unsuccessful:
+      "Laskariryhmää ei voitu luoda"
+   course_successful:
+      "Kurssi luotu onnistuneesti"
+   course_unsuccessful:
+      "Kurssia ei voitu luoda"      

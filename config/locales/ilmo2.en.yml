@@ -1,0 +1,25 @@
+en:
+   welcome:
+      "Welcome"
+   guest:
+      "Guest"
+   account_created:
+      "Account created"
+   account_not_created:
+      "Account creation unsuccessful"
+   update_successful:
+      "Update successful"
+   update_unsuccessful:
+      "Update unsuccessful"
+   instance_successful:
+      "Course instance created"
+   instance_unsuccessful:
+      "Course instance creation unsuccessful"
+   group_successful:
+      "Exercise group created"
+   group_unsuccessful:
+      "Exercise creation unsuccessful"
+   course_successful:
+      "Course created"
+   course_unsuccessful:
+      "Course creation unsuccessful"

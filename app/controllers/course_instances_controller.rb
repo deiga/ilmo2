@@ -28,11 +28,11 @@ class CourseInstancesController < ApplicationController
     
     respond_to do |format|
       if @course_instance.save
-        flash[:msg] = 'Course instance created successfully'
+        flash[:msg] = :instance_successful
         format.html { redirect_to course_url(params[:course_instance][:course_id]) }
         format.xml  { render :xml => @course_instance, :status => :created, :location => course_instance }
       else
-        flash[:notice] = "Creation unsuccessful"
+        flash[:notice] = :instance_successful
         format.html { render :action => "new" }
         format.xml  { render :xml => @course_instance.errors, :status => :unprocessable_entity }
       end
