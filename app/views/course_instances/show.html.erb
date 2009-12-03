@@ -1,15 +1,21 @@
 
-<h2 id="course_title"><%= @course_instances.course.title %></h2>
-<h3 id="instance"<%= "#{@course_instances.season} #{@course_instances.start.year}"%></h3>
+<br />
+<fieldset>
+	<legend>
+		<strong><%=h @course_instances.course.title %> - <%=h "#{@course_instances.season} #{@course_instances.start.year}"%></strong>
+	</legend>
 
-<p id="instDescr">
-	<%= @course_instances.description %>
-</p>
+	<p id="description">
+		<%=h @course_instances.description %>
+	</p>
+</fieldset>
+
+<h3>Exercise groups:</h3>
 <p id="groups">
 	<% if @course_instances.exercise_groups.any? %>
 	<ol>
 		<% @course_instances.exercise_groups.each do |eg| %>
-   	<li><%= link_to "#{eg.weekday} #{eg.start}-#{eg.end}", eg %></li>
+   	<li><%= link_to "#{eg.weekday} #{eg.start}-#{eg.end} #{eg.place}", eg %></li>
 		<% end %>
 	</ol>
 	<% else %>

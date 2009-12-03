@@ -46,3 +46,7 @@ a:link, a:visited {
    color: White;
    font: bold smaller sans-serif;
 }
+
+#title a {
+   text-decoration: none;
+}

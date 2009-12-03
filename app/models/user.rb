@@ -2,8 +2,8 @@ require 'digest/sha1'
 
 class User < ActiveRecord::Base
   
-  has_many    :users_in_groups
-  has_many    :exercise_groups, :through => :users_in_groups
+  has_many    :user_in_groups
+  has_many    :exercise_groups, :through => :user_in_groups
   
   validates_uniqueness_of :username, :on => :create
   validates_length_of :username, :in => 4..40

@@ -1,8 +1,16 @@
-<h2 id="courseTitle"><%= @course.title %></h2>
 
-<p id="courseDescr">
-  <%=h @course.description %>
-</p>
+<br />
+<fieldset>
+	<legend>
+		<strong><%=h @course.title %></strong>
+	</legend>
+
+	<p id="description">
+		<%=h @course.description %>
+	</p>
+</fieldset>
+
+<h3>Course instances:</h3>
 <p id="instances">
 	<% if @course.course_instances.any? %>
 	<ul>

@@ -39,19 +39,19 @@ ActiveRecord::Schema.define(:version => 20091203190529) do
     t.datetime "updated_at"
   end
 
+  create_table "user_in_group", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "exercise_group_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", :force => true do |t|
     t.string   "username",      :limit => 40, :null => false
     t.string   "realname"
     t.string   "studentnumber"
     t.string   "enc_password"
     t.string   "salt"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "users_in_group", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "exercise_group_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

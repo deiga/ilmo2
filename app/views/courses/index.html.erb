@@ -1,6 +1,7 @@
 
-<h2 id="courses">Courses</h2>
-
+<h2>Courses available</h2>
+<p><%= link_to "All courses as PDF", courses_url(:format => :pdf) %></p>
+ 
 <div id="courses">
 	<ul id="courseListing">
 	<% @courses.each do |course| -%>
@@ -9,11 +10,3 @@
 	</ul>
 	
 </div>
-
-<%= link_to 'New course', new_course_path %>
-
-<%-# @courses.each do |course| %>
-<%-#h course.description %>
-<%-# link_to 'Edit', edit_course_path(course) %>
-<%-# link_to 'Destroy', course, :confirm => 'Are you sure?', :method => :delete %>
-<%-# end %>

@@ -1,6 +1,6 @@
-class CreateUsersInGroup < ActiveRecord::Migration
+class CreateUserInGroup < ActiveRecord::Migration
   def self.up
-    create_table :users_in_group do |t|
+    create_table :user_in_group do |t|
       t.belongs_to :user
       t.belongs_to :exercise_group
       t.timestamps
@@ -8,6 +8,6 @@ class CreateUsersInGroup < ActiveRecord::Migration
   end
 
   def self.down
-    drop_table :users_in_group
+    drop_table :user_in_group
   end
 end
