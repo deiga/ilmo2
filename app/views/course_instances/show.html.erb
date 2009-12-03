@@ -1,5 +1,6 @@
 
-<h2 id="instance_title"><%= @course_instances.course.title %> - <%= "#{@course_instances.season} #{@course_instances.start.year}"%></h2>
+<h2 id="course_title"><%= @course_instances.course.title %></h2>
+<h3 id="instance"<%= "#{@course_instances.season} #{@course_instances.start.year}"%></h3>
 
 <p id="instDescr">
 	<%= @course_instances.description %>
@@ -8,7 +9,7 @@
 	<% if @course_instances.exercise_groups.any? %>
 	<ol>
 		<% @course_instances.exercise_groups.each do |eg| %>
-   	<li><%= "#{eg.weekday} #{eg.start}-#{eg.end}" %></li>
+   	<li><%= link_to "#{eg.weekday} #{eg.start}-#{eg.end}", eg %></li>
 		<% end %>
 	</ol>
 	<% else %>

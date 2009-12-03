@@ -1,2 +1,15 @@
-<h1>ExerciseGroups#show</h1>
-<p>Find me in app/views/exercise_groups/show.html.erb</p>
+<h2 id="course_title"><%= @exercise_group.course_instance.course.title %></h2>
+<%= "#{@exercise_group.course_instance.season} #{@exercise_group.course_instance.start.year}"%><br />
+<%= "#{@exercise_group.weekday} #{@exercise_group.start} - #{@exercise_group.end}" %>
+
+<p id="attendees">
+	<% if @exercise_group..any? %>
+	<ul>
+		<% @course_instances.each do |inst| %>
+   	<li><%= link_to "#{inst.season} #{inst.start.year}", inst %></li>
+		<% end %>
+	</ul>
+	<% else %>
+		No course instances.
+	<% end %>
+</p>
