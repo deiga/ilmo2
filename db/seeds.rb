@@ -4,3 +4,13 @@ descr = %{Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusm
 puts "Creating 13 courses!"
 
 1.upto(13) {|i| Course.create :title => "Course#{i}", :description => descr}
+
+Course.all.each do |course|
+  CourseInstance.create :course => course, :season => 'Summer', :start => "2009-06-01", :end => "2009-09-01", :description => descr
+end
+
+CourseInstance.all.each do |ci|
+  ExerciseGroup.create :course_instance => ci, :weekday => "Wed", :start => "10", :end => "12", :place => "DK117"
+end
+
+User.create :username => 'deiga', :password => 'tester11'
