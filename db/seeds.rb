@@ -13,4 +13,8 @@ CourseInstance.all.each do |ci|
   ci.exercise_groups.create :weekday => "Wed", :start => "10", :end => "12", :place => "DK117"
 end
 
-User.create :username => 'deiga', :password => 'tester11'
+user = User.create :username => 'deiga', :password => 'tester11', :email => 'timo.sand@helsinki.fi'
+
+Role.create :name => 'admin'
+
+user.roles << Role.admin_role
