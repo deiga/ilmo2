@@ -46,6 +46,11 @@ namespace :deploy do
     run "touch #{current_path}/tmp/restart.txt"
   end
   
+  desc "Reset database on server"
+  task :reset do
+    run "#cd #{current_path} ; #{rake} db:reset"
+  end
+  
   #desc "Run migrate with trace"
   #task :migrate do
   #  run "cd #{current_path}; #{rake} --trace RAILS_ENV=#{rails_env} db:migrate"
@@ -57,7 +62,7 @@ after "deploy:symlink", "deploy:migrate"
 namespace :app do
   desc "Run sample data on production"
   task :sample do
-    run "export RAILS_ENV=production ; cd #{current_path} ; #{rake} db:seed courses=13"
+    run "export RAILS_ENV=production ; cd #{current_path} ; #{rake} db:seed"
   end
 end
 

@@ -23,3 +23,5 @@ de:
       "Kurs erstellt"
    course_unsuccessful:
       "Kurs erstellung unerfolgreich"
+   send:
+      "Absenden"

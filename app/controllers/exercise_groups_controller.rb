@@ -3,7 +3,6 @@ class ExerciseGroupsController < ApplicationController
   def new
     @course_instance = CourseInstance.find params[:course_instance_id]
     @exercise_group = ExerciseGroup.new
-    @weekdays = [:Mon, :Tue, :Wed, :Thu, :Fri]
     
     respond_to do |format|
       format.html # new.html.erb

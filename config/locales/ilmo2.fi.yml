@@ -22,4 +22,6 @@ fi:
    course_successful:
       "Kurssi luotu onnistuneesti"
    course_unsuccessful:
-      "Kurssia ei voitu luoda"      
+      "Kurssia ei voitu luoda"
+   send:
+      "Lähetä"      

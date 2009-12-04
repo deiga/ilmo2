@@ -2,7 +2,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :users, :except => [:index]
   map.resources :sessions, :only => [:index, :create, :destroy]
-  map.resources :user_in_group, :only => [:index, :create, :destroy]
+  map.resources :registration
   
   map.resources :courses, :shallow => true do |course|
     course.resources :course_instances do |ci|
@@ -15,6 +15,7 @@ ActionController::Routing::Routes.draw do |map|
     admin.resources :courses, :active_scaffold => true
     admin.resources :course_instances, :active_scaffold => true
     admin.resources :exercise_groups, :active_scaffold => true
+    admin.resource  :mailer, :controller => :mailer
   end
   
   map.resource :admin, :controller => :admin  

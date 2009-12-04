@@ -23,3 +23,5 @@ en:
       "Course created"
    course_unsuccessful:
       "Course creation unsuccessful"
+   send:
+      "Send"

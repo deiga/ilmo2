@@ -16,7 +16,7 @@ pdf.left_margin = 50
     pdf.text("All courses")
  
     courses.each do |course|
-      pdf.text("Name: #{course.title}", :font_size=>32)
+      pdf.text("Name: #{course.title}", :font_size=>24)
       pdf.text("Description:", :font_size=>12)
       pdf.text(course.description, :left=>50)
     end

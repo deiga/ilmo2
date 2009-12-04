@@ -1,11 +1,11 @@
-<h2 id="course_title"><%=h @exercise_group.course_instance.course.title %></h2>
+r<h2 id="course_title"><%=h @exercise_group.course_instance.course.title %></h2>
 <%=h @exercise_group.course_instance.season %> <%=h @exercise_group.course_instance.start.year %><br />
 <%=h "#{@exercise_group.weekday} #{@exercise_group.start} - #{@exercise_group.end}" %>
 
 <p id="attendees">
-	<% if @exercise_group.user_in_groups.any? %>
+	<% if @exercise_group.registrations.any? %>
 	<ul>
-		<% @exercise_group.user_in_groups.each do |user| %>
+		<% @exercise_group.registrations.each do |user| %>
    	<li><%= user.username %></li>
 		<% end %>
 	</ul>
@@ -14,4 +14,4 @@
 	<% end %>
 </p>
 
-<%= link_to 'Back', course_instance_url(@exercise_group.course_instance) %> | <%= link_to 'Register to course', user_in_groups_url, {:method => :post} %>
+<%= link_to 'Back', course_instance_url(@exercise_group.course_instance) %> | <%= link_to 'Register to course', registrations_url, {:method => :post} %>

@@ -1,0 +1,10 @@
+<h2>Mailer</h2>
+
+
+<% form_tag do %>
+
+	Subject: <%= text_field_tag :subject %><br />
+	<%= text_area_tag :body, nil, :rows => 10 %><br />
+	<%= submit_tag t :send %>
+	
+<% end %>

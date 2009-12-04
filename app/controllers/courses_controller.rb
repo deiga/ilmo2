@@ -6,6 +6,9 @@ class CoursesController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
+      format.rss
+      format.mp3
+      format.json
       format.xml  { render :xml => @courses }
       format.pdf  { send_data PdfExport.all_courses(@courses) }
     end

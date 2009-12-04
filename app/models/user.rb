@@ -2,8 +2,8 @@ require 'digest/sha1'
 
 class User < ActiveRecord::Base
   
-  has_many    :user_in_groups
-  has_many    :exercise_groups, :through => :user_in_groups
+  has_many    :registrations
+  has_many    :exercise_groups, :through => :registrations
   
   validates_uniqueness_of :username, :on => :create
   validates_length_of :username, :in => 4..40
@@ -16,6 +16,14 @@ class User < ActiveRecord::Base
   attr_protected :id, :salt
 
   attr_accessor :password, :password_confirmation
+  
+  named_scope :with_email, :conditions => "email IS NOT NULL AND LENGTH(email) > 0"
+  
+  after_create :update_newsfeed
+  
+  def update_newsfeed
+    
+  end
 
   def password=(pass)
     @password=pass
