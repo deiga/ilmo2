@@ -1,6 +1,6 @@
 class NewsfeedController < ApplicationController
   
-  skip_before_filter :authorization_requiredm :only => [ :show ]
+  skip_before_filter :authorization_required, :only => [ :show ]
   
   def show
     @newsfeeds = (params[:amount] ? Newsfeed.recent(params[:amount]) : Newsfeed.recent)
