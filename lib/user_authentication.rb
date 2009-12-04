@@ -20,5 +20,9 @@ module UserAuthentication
   def logged_in?
     session[:user_id]
   end
+  
+  def is_admin?
+    (current_user && current_user.roles.include?(Role.admin_role)) ? true : false
+  end
  
 end

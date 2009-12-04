@@ -28,15 +28,6 @@ class ExerciseGroupsController < ApplicationController
     end
   end
 
-  def update
-  end
-
-  def edit
-  end
-
-  def destroy
-  end
-
   def index
     @exercise_groups = ExerciseGroup.all
   end

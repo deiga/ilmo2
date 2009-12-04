@@ -1,14 +1,13 @@
 require 'spec_helper'
 
-describe Rights do
+describe Role do
   before(:each) do
     @valid_attributes = {
-      :user_id => 1,
-      :role_id => 1
+      :name => "value for name"
     }
   end
 
   it "should create a new instance given valid attributes" do
-    Rights.create!(@valid_attributes)
+    Role.create!(@valid_attributes)
   end
 end

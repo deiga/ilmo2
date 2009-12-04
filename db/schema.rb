@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091204184759) do
+ActiveRecord::Schema.define(:version => 20091204202341) do
 
   create_table "course_instances", :force => true do |t|
     t.string   "season"
@@ -74,10 +74,10 @@ ActiveRecord::Schema.define(:version => 20091204184759) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "email"
-    t.datetime "avatar_updated_at"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
 end

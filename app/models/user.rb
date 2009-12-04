@@ -5,13 +5,21 @@ class User < ActiveRecord::Base
   has_many    :registrations
   has_many    :exercise_groups, :through => :registrations
   
+  has_many :rights
+  has_many :roles, :through => :rights
+  
   validates_uniqueness_of :username, :on => :create
   validates_length_of :username, :in => 4..40
-  validates_length_of :password, :in => 5..40, :on => :create
-  validates_length_of :password, :in => 5..40, :allow_blank => true, :on => :update, :message => "must be present"
   validates_length_of :realname, :in => 3..20, :allow_blank => true
+  
+  validates_length_of :password, :in => 5..40, :on => :create
+  validates_length_of :password, :in => 5..40, :allow_blank => true, :on => :update
+  validates_confirmation_of :password
+  
   validates_length_of :studentnumber, :is => 9, :allow_blank => true
-  validates_confirmation_of :password, :message => "should match confirmation"
+  validates_format_of :email, :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i, :allow_blank => true
+  
+  has_attached_file :avatar, :default_url => '/images/user_avatars/missing.jpg'
   
   attr_protected :id, :salt
 
@@ -19,6 +27,7 @@ class User < ActiveRecord::Base
   
   named_scope :with_email, :conditions => "email IS NOT NULL AND LENGTH(email) > 0"
   
+  before_save :downcase_username
   after_create :update_newsfeed
 
   def password=(pass)
@@ -27,8 +36,9 @@ class User < ActiveRecord::Base
     self.enc_password = User.encrypt(@password, self.salt)
   end
 
-  def self.authenticate(login, pass)
-    user = find(:first, :conditions=>["username = ?", login])
+  def self.authenticate(username, pass)
+    user = find_by_username(username)
+    
     return nil if user.nil?
     return user if User.encrypt(pass, user.salt) == user.enc_password
     nil
@@ -38,6 +48,10 @@ private
 
   def update_newsfeed
     Newsfeed.user_created(self)
+  end
+  
+  def downcase_username
+    self.username.downcase!
   end
 
 protected 

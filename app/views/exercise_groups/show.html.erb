@@ -1,7 +1,8 @@
-<h2 id="course_title"><%=h @exercise_group.course_instance.course.title %></h2>
-<%=h @exercise_group.course_instance.season %> <%=h @exercise_group.course_instance.start.year %><br />
-<%=h "#{@exercise_group.weekday} #{@exercise_group.start} - #{@exercise_group.end}" %>
+<h2 id="course_title"><%=h @exercise_group.course_instance.course.title %>
+<%=h @exercise_group.course_instance.season %> <%=h @exercise_group.course_instance.start.year %></h2>
+<h3><%=h "#{@exercise_group.weekday} #{@exercise_group.start} - #{@exercise_group.end}" %></h3>
 
+<h4>Registered users:</h4>
 <p id="attendees">
 	<% if @exercise_group.users.any? %>
 	<ul>
@@ -14,4 +15,6 @@
 	<% end %>
 </p>
 
-<%= link_to 'Back', course_instance_url(@exercise_group.course_instance) %> | <%= link_to 'Register to this group', registrations_url(:user_id => params[:id], :exercise_group_id => @exercise_group), {:method => :post} %>
+<p><%= link_to 'Register to this exercise group', course_course_instance_exercise_group_registration_url(course, course_instance, @exercise_group) %></p>
+
+<%= link_to 'Back', course_instance_url(@exercise_group.course_instance) %> | <%= link_to 'Register to this group', registrations_url(@exercise_group), {:method => :post} %>
