@@ -2,9 +2,9 @@
 
 
 <% form_tag do %>
-
+	<%= select("group", "group_id", @exercise_groups.collect { |g| [ g.course_instance.course.title+" - "+g.course_instance.season+" "+g.course_instance.start.year.to_s+" - "+g.weekday+" "+g.start+" - "+g.end, g.id ] }) %><br />
 	Subject: <%= text_field_tag :subject %><br />
-	<%= text_area_tag :body, nil, :rows => 10 %><br />
+	Body: <br /><%= text_area_tag :body, nil, :rows => 10 %><br />
 	<%= submit_tag t :send %>
 	
 <% end %>

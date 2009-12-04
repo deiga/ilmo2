@@ -2,7 +2,7 @@ class Newsfeed < ActiveRecord::Base
   
   default_scope :order => 'created_at DESC'
   named_scope :later_than, lambda { |later| 
-    { :conditions => [ "created_at > ?", later ] }
+    { :conditions => [ "created_at > ?", DateTime.parse(later.to_s) ] }
   }
   
   # Newsfeed.user_created
@@ -12,7 +12,13 @@ class Newsfeed < ActiveRecord::Base
   
   # Newsfeed.user_registered_to_group
   def self.user_registered_to_group(registration)
-    create :message => "User #{registration.user.username} registered to group #{registration.exercise_group.weekday} #{registration.exercise_group.start} - #{registration.exercise_group.end} of <strong>#{registration.exercise_group.course_instance.course.title} - #{registration.exercise_group.course_instance.season} #{registration.exercise_group.course_instance.start.year}</strong>"
+    template = "#{registration.user.username} is attending <strong><%= link_to #{registration.exercise_group.course_instance.course.title}, course_instance_url(#{registration.exercise_group.course_instance}) %></strong>"
+    create :message => template
+  end
+  
+  # Newsfeed.course_created
+  def self.course_created(course)
+    create :message => "'#{course.title}' was added to the course catalog"
   end
   
 end

@@ -2,9 +2,9 @@ class CoursesController < ApplicationController
   # GET /courses
   # GET /courses.xml
   def index
+    params[:later_than] = 30.minutes.ago
     @courses = Course.all
-    @newsfeeds = Newsfeed.all
-    params[:later_than] = "15.minutes.ago"
+    @newsfeeds = Newsfeed.all #later_than params[:later_than]
 
     respond_to do |format|
       format.html # index.html.erb
