@@ -20,10 +20,6 @@ class User < ActiveRecord::Base
   named_scope :with_email, :conditions => "email IS NOT NULL AND LENGTH(email) > 0"
   
   after_create :update_newsfeed
-  
-  def update_newsfeed
-    
-  end
 
   def password=(pass)
     @password=pass
@@ -37,6 +33,12 @@ class User < ActiveRecord::Base
     return user if User.encrypt(pass, user.salt) == user.enc_password
     nil
   end 
+  
+private
+
+  def update_newsfeed
+    Newsfeed.user_registered(self)
+  end
 
 protected 
   

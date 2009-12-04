@@ -1,7 +1,12 @@
 
+<h3>Facebookish newsfeed</h3>
+<div id="newsfeed">
+	
+</div>
+
 <h2>Courses available</h2>
 <p><%= link_to "All courses as PDF", courses_url(:format => :pdf) %></p>
- 
+
 <div id="courses">
 	<ul id="courseListing">
 	<% @courses.each do |course| -%>

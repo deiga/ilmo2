@@ -3,11 +3,12 @@ class CoursesController < ApplicationController
   # GET /courses.xml
   def index
     @courses = Course.all
+    params[:later_than] = "15.minutes.ago"
 
     respond_to do |format|
       format.html # index.html.erb
       format.rss
-      format.mp3
+      format.mp3 { send_data Course.talk_course_names(@courses) }
       format.json
       format.xml  { render :xml => @courses }
       format.pdf  { send_data PdfExport.all_courses(@courses) }
