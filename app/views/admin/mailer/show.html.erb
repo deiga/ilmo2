@@ -7,9 +7,9 @@
 
 <% form_tag admin_mailer_path do %>
 	<%= select_tag 'exercise_group_id', 
-		options_for_select(@exercise_groups.collect { |g| [ "#{g.course_instance.course.title} - #{g.course_instance.season} #{g.course_instance.start.year.to_s} - #{g.weekday} #{g.start} - #{g.end}: #{g.users.count} registrants", g.id ] }) %>
+		options_for_select(@exercise_groups.collect { |g| [ "#{g.course_instance.course.title} - #{g.course_instance.season} #{g.course_instance.start.year.to_s} - #{g.weekday} #{g.start} - #{g.end}: #{g.users.count} registrants", g.id ] }) %><br />
 	Subject: <%= text_field_tag :subject %><br />
-	Body: <br /><%= text_area_tag :body, nil, :rows => 10m :cols => 40 %>
+	Body: <br /><%= text_area_tag :body, nil, :rows => 10, :cols => 40 %><br />
 	
 	<%= submit_tag t :send %>
 	

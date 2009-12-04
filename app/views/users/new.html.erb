@@ -1,18 +1,23 @@
 <h2 id="register">Registering to Ilmo 2.0</h2>
 
-<% form_for @user, :url => { :action => :create } do |f| %>
+<% form_for @user do |f| %> <!-- removed , :url => { :action => :create } -->
 	<%= f.error_messages %>
+	
 	<p>
-	<%= f.label :username, 'Username:' %>
-	<%= f.text_field :username, :size => 15 %>&nbsp;<span id="hint">(At least 4 characters)</span>
+		<%= f.label :username, 'Username:' %>
+		<%= f.text_field :username, :size => 15 %>&nbsp;<span id="hint">(At least 4 characters)</span>
 	</p>
 	<p>
-	<%= f.label :password, 'Password:' %>
-	<%= f.password_field :password, :size => 15 %>&nbsp;<span id="hint">(At least 8 characters)</span>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+	<p>
+		<%= f.label :password, 'Password:' %>
+		<%= f.password_field :password, :size => 15 %>&nbsp;<span id="hint">(At least 8 characters)</span>
 	</p>
 	<p>
-	<%= f.label :password_confirmation, 'Repeat Password:' %>
-	<%= f.password_field :password_confirmation, :size => 15 %>
+		<%= f.label :password_confirmation, 'Repeat Password:' %>
+		<%= f.password_field :password_confirmation, :size => 15 %>
 	</p>
 	<%= f.submit 'Register' %>
 <% end %>

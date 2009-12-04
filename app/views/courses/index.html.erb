@@ -1,14 +1,4 @@
 
-<h3>Facebookish newsfeed</h3>
-<% @newsfeeds.each do |item| %>
-	<%= item.message %>!<br />
-	<%= time_ago_in_words item.created_at %> ago!
-	<hr/>
-<% end %>
-<div id="newsfeed">
-	
-</div>
-
 <h2>Courses available</h2>
 <p><%= link_to "All courses as PDF", courses_url(:format => :pdf) %></p>
 

@@ -27,18 +27,26 @@
 </head>
 <body>
 	<div id="whole">
-		
+				
 	<h1 id="title"><%= link_to 'Ilmo 2.0', root_url%></h1>
+	
+	<div id="newsfeed" style="float:right">
+   	<h2>Newsfeed</h2>
+   	<%= render :partial => "newsfeed/items" %>
+ 	</div>
+
 	<% if flash[:notice] -%>
 		<div id="notice">
 			<%= flash[:notice] %>
 		</div>
 	<% end -%>
+	
 	<% if flash[:msg] -%>
 		<div id="message">
 			<%= flash[:msg] %>
 		</div>
 	<% end -%>
+	
 	<div id="logged_status">
 		<%=t :welcome %>, 
 		<% if logged_in? %>

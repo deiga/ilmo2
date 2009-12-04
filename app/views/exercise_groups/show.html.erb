@@ -15,6 +15,4 @@
 	<% end %>
 </p>
 
-<p><%= link_to 'Register to this exercise group', course_course_instance_exercise_group_registration_url(course, course_instance, @exercise_group) %></p>
-
 <%= link_to 'Back', course_instance_url(@exercise_group.course_instance) %> | <%= link_to 'Register to this group', registrations_url(@exercise_group), {:method => :post} %>
