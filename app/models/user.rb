@@ -37,7 +37,7 @@ class User < ActiveRecord::Base
 private
 
   def update_newsfeed
-    Newsfeed.user_registered(self)
+    Newsfeed.user_created(self)
   end
 
 protected 

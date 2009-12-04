@@ -3,6 +3,7 @@ class CoursesController < ApplicationController
   # GET /courses.xml
   def index
     @courses = Course.all
+    @newsfeeds = Newsfeed.all
     params[:later_than] = "15.minutes.ago"
 
     respond_to do |format|
