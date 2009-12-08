@@ -1,4 +1,5 @@
 class CoursesController < ApplicationController
+  require 'SWFChart'
   # GET /courses
   # GET /courses.xml
   def index

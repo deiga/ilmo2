@@ -2,10 +2,6 @@
 <h2>Courses available</h2>
 <p><%= link_to "All courses as PDF", courses_url(:format => :pdf) %></p>
 
-<!-- <div id="chart">
-	<% puts url_for(:controller => :chart) %>
-	<%-# @swf.insert_chart(:data_source => url_for(:controller => :chart), :width => "400", :height => "300") %> 
-</div> -->
 
 <div id="courses">
 	<ul id="courseListing">
@@ -14,4 +10,7 @@
 	<% end %>
 	</ul>
 	
+</div>
+<div id="chart">
+	<%= @swf.insert_chart(:data_source => url_for(:controller => "/chart"), :width => "500", :height => "300") %> 
 </div>

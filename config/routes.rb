@@ -2,7 +2,8 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :users, :except => [:index]
   map.resources :sessions, :only => [:index, :create, :destroy]
-  map.resources :chart, :controller => :chart, :only => [:index]
+  map.resources :chart, :only => [:index]
+  map.resources :sample, :only => [:index]
   map.resources :registrations
   map.resource :newsfeed, :controller => :newsfeed
   
