@@ -5,4 +5,6 @@ module EventsHelper
     when 'NewCourseEvent'       then ""
     when 'NewUserEvent'         then ""
     when 'NewRegistrationEvent' then ""
+    end
+  end2
 end
