@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="59"
+   name=""
+   committed-date="2006-05-04T20:01:32.639250Z"
+   url="svn://home:5631/Web/rails/rgc/public/charts_library"
+   last-author="raf"
+   kind="dir"
+   uuid="e7cf45c9-6e94-2541-87ec-242511ee0bca"
+   repos="svn://home:5631"
+   revision="84"/>
+<entry
+   committed-rev="59"
+   name="mxno.swf"
+   text-time="2006-05-04T19:58:05.062500Z"
+   committed-date="2006-05-04T20:01:32.639250Z"
+   checksum="78fcccff94344e7dd5defa54b9f191d7"
+   last-author="raf"
+   kind="file"
+   prop-time="2006-05-04T19:58:04.906250Z"/>
+<entry
+   committed-rev="59"
+   name="cl3d.swf"
+   text-time="2006-05-04T19:58:05.062500Z"
+   committed-date="2006-05-04T20:01:32.639250Z"
+   checksum="080b6ba5087ca2d9e88e45c56fffeddd"
+   last-author="raf"
+   kind="file"
+   prop-time="2006-05-04T19:58:04.906250Z"/>
+<entry
+   committed-rev="59"
+   name="brfl.swf"
+   text-time="2006-05-04T19:58:05.062500Z"
+   committed-date="2006-05-04T20:01:32.639250Z"
+   checksum="e636e137f27733c4fd80bbf1ba8bb11f"
+   last-author="raf"
+   kind="file"
+   prop-time="2006-05-04T19:58:04.937500Z"/>
+<entry
+   committed-rev="59"
+   name="clno.swf"
+   text-time="2006-05-04T19:58:05.062500Z"
+   committed-date="2006-05-04T20:01:32.639250Z"
+   checksum="0370b5b53ee15e7f2afbddbb22336a4d"
+   last-author="raf"
+   kind="file"
+   prop-time="2006-05-04T19:58:04.953125Z"/>
+<entry
+   committed-rev="59"
+   name="cnno.swf"
+   text-time="2006-05-04T19:58:05.062500Z"
+   committed-date="2006-05-04T20:01:32.639250Z"
+   checksum="c09ca16e59544119dfc68e8625211109"
+   last-author="raf"
+   kind="file"
+   prop-time="2006-05-04T19:58:04.953125Z"/>
+<entry
+   committed-rev="59"
+   name="pi3d.swf"
+   text-time="2006-05-04T19:58:05.062500Z"
+   committed-date="2006-05-04T20:01:32.639250Z"
+   checksum="4b4e62e1f2a91a6f1bb1505582e0e8e8"
+   last-author="raf"
+   kind="file"
+   prop-time="2006-05-04T19:58:04.953125Z"/>
+<entry
+   committed-rev="59"
+   name="arno.swf"
+   text-time="2006-05-04T19:58:05.062500Z"
+   committed-date="2006-05-04T20:01:32.639250Z"
+   checksum="afa22727c295991015d9c48933fd233c"
+   last-author="raf"
+   kind="file"
+   prop-time="2006-05-04T19:58:04.984375Z"/>
+<entry
+   committed-rev="59"
+   name="brno.swf"
+   text-time="2006-05-04T19:58:05.078125Z"
+   committed-date="2006-05-04T20:01:32.639250Z"
+   checksum="ddd8c8b216e88ba4d3f25a227968bec0"
+   last-author="raf"
+   kind="file"
+   prop-time="2006-05-04T19:58:04.984375Z"/>
+<entry
+   committed-rev="59"
+   name="clp3.swf"
+   text-time="2006-05-04T19:58:05.078125Z"
+   committed-date="2006-05-04T20:01:32.639250Z"
+   checksum="ba3114829b264a019adaca08ca1715a8"
+   last-author="raf"
+   kind="file"
+   prop-time="2006-05-04T19:58:04.984375Z"/>
+<entry
+   committed-rev="59"
+   name=".DS_Store"
+   text-time="2006-05-04T19:58:05.078125Z"
+   committed-date="2006-05-04T20:01:32.639250Z"
+   checksum="409c86b5b07b8747b502af5d6bc0f468"
+   last-author="raf"
+   kind="file"
+   prop-time="2006-05-04T19:58:05.000000Z"/>
+<entry
+   committed-rev="59"
+   name="scno.swf"
+   text-time="2006-05-04T19:58:05.078125Z"
+   committed-date="2006-05-04T20:01:32.639250Z"
+   checksum="e584503d279dec38a527aa71b4989df8"
+   last-author="raf"
+   kind="file"
+   prop-time="2006-05-04T19:58:05.000000Z"/>
+<entry
+   committed-rev="59"
+   name="cls3.swf"
+   text-time="2006-05-04T19:58:05.078125Z"
+   committed-date="2006-05-04T20:01:32.639250Z"
+   checksum="177bca44d41735cf58e19153eca714af"
+   last-author="raf"
+   kind="file"
+   prop-time="2006-05-04T19:58:05.015625Z"/>
+<entry
+   committed-rev="59"
+   name="clst.swf"
+   text-time="2006-05-04T19:58:05.078125Z"
+   committed-date="2006-05-04T20:01:32.639250Z"
+   checksum="835a35a3fb808b7f4f46d3cf74fb83b2"
+   last-author="raf"
+   kind="file"
+   prop-time="2006-05-04T19:58:05.015625Z"/>
+<entry
+   committed-rev="59"
+   name="pino.swf"
+   text-time="2006-05-04T19:58:05.078125Z"
+   committed-date="2006-05-04T20:01:32.639250Z"
+   checksum="073f66502adc4a5ea00e023921b4b2a7"
+   last-author="raf"
+   kind="file"
+   prop-time="2006-05-04T19:58:05.031250Z"/>
+<entry
+   committed-rev="59"
+   name="lnno.swf"
+   text-time="2006-05-04T19:58:05.078125Z"
+   committed-date="2006-05-04T20:01:32.639250Z"
+   checksum="88c7e5bc34fd44803295ec2e9907e781"
+   last-author="raf"
+   kind="file"
+   prop-time="2006-05-04T19:58:05.031250Z"/>
+<entry
+   committed-rev="59"
+   name="arst.swf"
+   text-time="2006-05-04T19:58:05.078125Z"
+   committed-date="2006-05-04T20:01:32.639250Z"
+   checksum="f4fa80955a034c2a3af5e43546ea944e"
+   last-author="raf"
+   kind="file"
+   prop-time="2006-05-04T19:58:05.031250Z"/>
+<entry
+   committed-rev="59"
+   name="brst.swf"
+   text-time="2006-05-04T19:58:05.093750Z"
+   committed-date="2006-05-04T20:01:32.639250Z"
+   checksum="521ab78f41dd71f35da6642e224f1216"
+   last-author="raf"
+   kind="file"
+   prop-time="2006-05-04T19:58:05.046875Z"/>
+<entry
+   committed-rev="59"
+   name="pono.swf"
+   text-time="2006-05-04T19:58:05.093750Z"
+   committed-date="2006-05-04T20:01:32.639250Z"
+   checksum="329da6daf4c3283a9fc8dc06ec54f2e1"
+   last-author="raf"
+   kind="file"
+   prop-time="2006-05-04T19:58:05.046875Z"/>
+<entry
+   committed-rev="59"
+   name="clfl.swf"
+   text-time="2006-05-04T19:58:05.093750Z"
+   committed-date="2006-05-04T20:01:32.639250Z"
+   checksum="74f10e5d9f7bc5a40957788ce8b90231"
+   last-author="raf"
+   kind="file"
+   prop-time="2006-05-04T19:58:05.046875Z"/>
+</wc-entries>
