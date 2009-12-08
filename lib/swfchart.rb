@@ -1,5 +1,5 @@
 class SWFChart
-	require_gem 'builder'
+	require 'builder'
 	
 	attr_accessor :height
 	attr_accessor :width

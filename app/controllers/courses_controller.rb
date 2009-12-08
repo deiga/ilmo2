@@ -4,7 +4,24 @@ class CoursesController < ApplicationController
   def index
     params[:later_than] = 30.minutes.ago
     @courses = Course.all
-    @newsfeeds = Newsfeed.all #later_than params[:later_than]
+    @newsfeeds = Newsfeed.all
+    
+    @swf = SWFChart.new
+
+    session[:swfchart] = @swf
+    #set data headings
+    @swf.data_array = Array.new
+    @swf.data_array[0] = [nil]
+    @swf.data_array[1] = ['']
+
+    #get space count per category
+    #for c in @current_show.ShowCategories
+    #  @swf.data_array[0] << c.name
+    #  @swf.data_array[1] << c.BaseSpaces.count
+    #end
+    @swf.chart_type = "3d pie"
+    @swf.chart_rect = {:x => '150',:width => '200',:height => '125'}
+    @swf.legend_rect = {:x => 10, :y => 10, :width => 50, :height => 200}
 
     respond_to do |format|
       format.html # index.html.erb

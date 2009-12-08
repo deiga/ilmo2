@@ -22,7 +22,7 @@
 #Version 0.1.14
 
 class SWFChart
-	require_gem 'builder'
+	require 'builder'
 	
 	attr_accessor :height
 	attr_accessor :width
@@ -86,11 +86,11 @@ class SWFChart
 		
 		@license = "&license=" + @license unless @license == ""
 		
-		html = html + "<PARAM NAME=movie VALUE='" + @flash_file + "?library_path=" + @lib_path + "&xml_source=" + @data_source + "&license=" + @chart_license + "'> \n"
+		html = html + "<PARAM NAME=movie VALUE='" + @flash_file + "?library_path=" + @lib_path + "&xml_source=" + @data_source + "&license=" + @license + "'> \n"
 		html = html + "<PARAM NAME=quality VALUE=high> \n"
 		html = html + "<PARAM NAME=bgcolor VALUE=#" + @bg_color + "> \n"
 		html = html + "<PARAM NAME=wmode VALUE=transparent> \n" if @transparent
-		html = html + "<EMBED src='" + @flash_file + "?library_path=" + @lib_path + "&xml_source=" + @data_source + "&license=" +@chart_license + "' "
+		html = html + "<EMBED src='" + @flash_file + "?library_path=" + @lib_path + "&xml_source=" + @data_source + "&license=" +@license + "' "
 		html = html + "quality=high bgcolor=#" + @bg_color + " WIDTH=" + @width + " HEIGHT=" + @height + " NAME='charts' ALIGN='' swLiveConnect='true' "
 		html = html + "wmode=transparent " if @transparent
 		html = html + "TYPE='application/x-shockwave-flash' PLUGINSPAGE='http://www.macromedia.com/go/getflashplayer'></EMBED> \n" 

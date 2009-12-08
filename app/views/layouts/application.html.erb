@@ -28,35 +28,35 @@
 <body>
 	<div id="whole">
 				
-	<h1 id="title"><%= link_to 'Ilmo 2.0', root_url%></h1>
+		<h1 id="title"><%= link_to 'Ilmo 2.0', root_url%></h1>
 	
-	<div id="newsfeed" style="float:right">
-   	<h2>Newsfeed</h2>
-   	<%= render :partial => "newsfeed/items" %>
- 	</div>
+		<div id="newsfeed" style="float:right">
+	   	<h2>Newsfeed</h2>
+	   	<%= render :partial => "newsfeed/items" %>
+	 	</div>
 
-	<% if flash[:notice] -%>
-		<div id="notice">
-			<%= flash[:notice] %>
-		</div>
-	<% end -%>
+		<% if flash[:notice] -%>
+			<div id="notice">
+				<%= flash[:notice] %>
+			</div>
+		<% end -%>
 	
-	<% if flash[:msg] -%>
-		<div id="message">
-			<%= flash[:msg] %>
-		</div>
-	<% end -%>
+		<% if flash[:msg] -%>
+			<div id="message">
+				<%= flash[:msg] %>
+			</div>
+		<% end -%>
 	
-	<div id="logged_status">
-		<%=t :welcome %>, 
-		<% if logged_in? %>
-			<%= link_to current_user.username, edit_user_url(current_user) %>. (<%= link_to "logout", logout_url %>)
-		<% else %>
-			<%=t :guest %> (<%= link_to 'Login', login_url %>)
-		<% end %>
-	</div>
+		<div id="logged_status">
+			<%=t :welcome %>, 
+			<% if logged_in? %>
+				<%= link_to current_user.username, edit_user_url(current_user) %>. (<%= link_to "logout", logout_url %>)
+			<% else %>
+				<%=t :guest %> (<%= link_to 'Login', login_url %>)
+			<% end %>
+		</div>
 
-	<%= yield %>
+		<%= yield %>
 	</div>
 	<div id="timeCreated">
 		Page created: <%= created_time  %>
