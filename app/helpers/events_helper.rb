@@ -6,5 +6,5 @@ module EventsHelper
     when 'NewUserEvent'         then ""
     when 'NewRegistrationEvent' then ""
     end
-  end2
+  end
 end
