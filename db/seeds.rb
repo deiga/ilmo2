@@ -18,3 +18,5 @@ user = User.create :username => 'deiga', :password => 'tester11', :email => 'tim
 Role.create :name => 'admin'
 
 user.roles << Role.admin_role
+
+puts "Seed done!"
