@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091209113617) do
+ActiveRecord::Schema.define(:version => 20091209123736) do
 
   create_table "course_instances", :force => true do |t|
     t.string   "season"
@@ -37,6 +37,13 @@ ActiveRecord::Schema.define(:version => 20091209113617) do
     t.string   "start"
     t.string   "end"
     t.string   "place"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "feedbacks", :force => true do |t|
+    t.integer  "course_instance_id"
+    t.text     "message"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
