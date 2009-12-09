@@ -9,16 +9,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091204210256) do
+ActiveRecord::Schema.define(:version => 20091209113617) do
 
   create_table "course_instances", :force => true do |t|
     t.string   "season"
     t.text     "description"
-    t.integer  "course_id",   :null => false
+    t.integer  "course_id",           :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.date     "start"
     t.date     "end"
+    t.integer  "min_exercise_groups"
+    t.integer  "max_exercise_groups"
   end
 
   create_table "courses", :force => true do |t|
