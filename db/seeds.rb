@@ -17,6 +17,20 @@ user = User.create :username => 'deiga', :password => 'tester11', :email => 'tim
 
 Role.create :name => 'admin'
 
+basic = Category.create :name => 'Basic studies'
+inter = Category.create :name => 'Intermediate studies'
+advanced = Category.create :name => 'Advanced studies'
+other = Category.create :name => 'Others'
+
+1.upto(13) { 
+  |i| c = Course.find i
+  if i.even?
+    c.categories << basic
+  else
+    c.categories << inter
+  end
+  }
+
 user.roles << Role.admin_role
 
 puts "Seed done!"
