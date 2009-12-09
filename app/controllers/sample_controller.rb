@@ -1,5 +1,4 @@
 class SampleController < ApplicationController
-require 'SWFChart'
 
   def index
     @Description = "Users Chart"

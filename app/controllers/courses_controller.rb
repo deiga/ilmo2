@@ -1,7 +1,5 @@
 class CoursesController < ApplicationController
-  require 'SWFChart'
-  # GET /courses
-  # GET /courses.xml
+
   def index
     params[:later_than] = 30.minutes.ago
     @courses = Course.all
@@ -33,8 +31,6 @@ class CoursesController < ApplicationController
     end
   end
 
-  # GET /courses/1
-  # GET /courses/1.xml
   def show
     @course = Course.find params[:id] 
     @course_instances = CourseInstance.find_by_course_in_order @course.id
@@ -45,8 +41,6 @@ class CoursesController < ApplicationController
     end
   end
 
-  # GET /courses/new
-  # GET /courses/new.xml
   def new
     @course = Course.new
 
@@ -56,13 +50,10 @@ class CoursesController < ApplicationController
     end
   end
 
-  # GET /courses/1/edit
   def edit
     @course = Course.find(params[:id])
   end
 
-  # POST /courses
-  # POST /courses.xml
   def create
     @course = Course.new(params[:course])
 
@@ -79,8 +70,6 @@ class CoursesController < ApplicationController
     end
   end
 
-  # PUT /courses/1
-  # PUT /courses/1.xml
   def update
     @course = Course.find(params[:id])
 
@@ -96,8 +85,6 @@ class CoursesController < ApplicationController
     end
   end
 
-  # DELETE /courses/1
-  # DELETE /courses/1.xml
   def destroy
     @course = Course.find(params[:id])
     @course.destroy
@@ -107,4 +94,5 @@ class CoursesController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
 end
