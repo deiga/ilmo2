@@ -4,11 +4,18 @@
 
 
 <div id="courses">
-	<ul id="courseListing">
-	<% @courses.each do |course| -%>
-		<li><%= link_to (h course.title), course %></li>
+	<% Category.all.each do |cat| %>
+		<%= content_tag :h3, cat.name %>
+		<% if cat.courses.any? %>
+			<%= tag :ul, {:id => cat.name.downcase.split(' ')[0]+'CourseListing' } %>
+			<% cat.courses.each do |course| -%>
+				<li><%= link_to (h course.title), course %></li>
+			<% end %>
+			</ul>
+		<% else %>
+			No courses under this category
+		<% end %>
 	<% end %>
-	</ul>
 	
 </div>
 <div id="chart">

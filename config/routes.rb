@@ -22,6 +22,8 @@ ActionController::Routing::Routes.draw do |map|
     admin.resources :roles, :active_scaffold => true
     admin.resources :rights, :active_scaffold => true
     admin.resources :registrations, :active_scaffold => true
+    admin.resources :categories, :active_scaffold => true
+    admin.resources :course_categories, :active_scaffold => true
     admin.resource  :mailer, :controller => :mailer
   end
   

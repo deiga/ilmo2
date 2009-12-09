@@ -5,7 +5,6 @@ class CoursesController < ApplicationController
   def index
     params[:later_than] = 30.minutes.ago
     @courses = Course.all
-    @newsfeeds = Newsfeed.all
     
     @swf = SWFChart.new
 
