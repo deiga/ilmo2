@@ -32,7 +32,9 @@
 	
 		<div id="newsfeed" style="float:right">
 	   	<h2>Newsfeed</h2>
-	   	<%= render :partial => "newsfeed/items" %>
+			<ul>
+	   		<%= render :partial => "newsfeed/items", :collection => Newsfeed.recent %>
+			</ul>
 	 	</div>
 
 		<% if flash[:notice] -%>

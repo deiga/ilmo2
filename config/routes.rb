@@ -6,6 +6,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :sample, :only => [:index]
   map.resources :registrations
   map.resource :newsfeed, :controller => :newsfeed
+  map.resource :feedback
   
   map.resources :courses, :shallow => true do |course|
     course.resources :course_instances do |ci|

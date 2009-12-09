@@ -11,7 +11,6 @@ class ApplicationController < ActionController::Base
   include UserAuthentication # /lib/user_authentication.rb
   
   before_filter :authentication_required
-  
   before_filter :set_locale
   
   protected

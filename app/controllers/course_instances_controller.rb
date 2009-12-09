@@ -5,7 +5,7 @@ class CourseInstancesController < ApplicationController
   end
   
   def show
-    @course_instances = CourseInstance.find params[:id]
+    @course_instance = CourseInstance.find params[:id]
   end
   
   def new
@@ -14,7 +14,7 @@ class CourseInstancesController < ApplicationController
     
     respond_to do |format|
       format.html # new.html.erb
-      format.xml  { render :xml => @course_instances }
+      format.xml  { render :xml => @course_instance }
     end
   end
   

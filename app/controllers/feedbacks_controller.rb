@@ -5,7 +5,8 @@ class FeedbacksController < ApplicationController
   def destroy
   end
 
-  def show
+  def new
+    raise params.inspect
   end
-
+  
 end

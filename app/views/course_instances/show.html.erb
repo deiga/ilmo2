@@ -2,19 +2,19 @@
 <br />
 <fieldset>
 	<legend>
-		<strong><%=h @course_instances.course.title %> - <%=h "#{@course_instances.season} #{@course_instances.start.year}"%></strong>
+		<strong><%=h @course_instance.course.title %> - <%=h "#{@course_instance.season} #{@course_instance.start.year}"%></strong>
 	</legend>
 
 	<p id="description">
-		<%=h @course_instances.description %>
+		<%=h @course_instance.description %>
 	</p>
 </fieldset>
 
 <h3>Exercise groups:</h3>
 <p id="groups">
-	<% if @course_instances.exercise_groups.any? %>
+	<% if @course_instance.exercise_groups.any? %>
 	<ol>
-		<% @course_instances.exercise_groups.each do |eg| %>
+		<% @course_instance.exercise_groups.each do |eg| %>
    	<li><%= link_to "#{eg.weekday} #{eg.start}-#{eg.end} #{eg.place}", eg %></li>
 		<% end %>
 	</ol>
@@ -22,5 +22,11 @@
 		No exercise groups.
 	<% end %>
 </p>
+<div id="feedback">
+	<h4>Course feedback:</h4>
+	<ul>
+		<%= render :partial => 'feedbacks/items', :collection => Feedback.course(@course_instance.id) %>
+	</ul>
+</div>
 
-<%= link_to 'Back', @course_instances.course %> | <%= link_to 'New Exercise group', new_course_instance_exercise_group_url(@course_instances) %>
+<%= link_to 'Back', @course_instance.course %> | <%= link_to 'New Exercise group', new_course_instance_exercise_group_url(@course_instance) %> | <%= link_to 'Give feedback', new_feedback_url(@course_instance) %>
