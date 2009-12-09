@@ -1,6 +1,7 @@
 class CourseInstance < ActiveRecord::Base
   belongs_to  :course
   has_many    :exercise_groups, :dependent => :destroy
+  has_many    :feedbacks, :dependent => :destroy
   
   validates_numericality_of :course_id, :message => "is not a number"
   validates_associated :course
