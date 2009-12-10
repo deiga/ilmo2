@@ -1,1 +1,1 @@
-<li><strong><%= items.head %></strong><br /><%= "#{items.message} <br /> #{time_ago_in_words(items.created_at)} ago" %></li>
+<span><%= RedCloth.new(items.message).to_html "<br /> #{time_ago_in_words(items.created_at)} ago" %></span>

@@ -62,8 +62,7 @@ ActiveRecord::Schema.define(:version => 20091210204050) do
   end
 
   create_table "news", :force => true do |t|
-    t.string   "head"
-    t.string   "message"
+    t.text     "message"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -22,9 +22,7 @@
 	 	</div>
 		<div id="news" style="float:right; margin-right: 10em;">
 			<h2>Administrative News:</h2>
-			<ul>
 				<%= render :partial => 'news/items', :collection => News.recent %>
-			</ul>
 		</div>
 		
 		<% if flash[:notice] -%>

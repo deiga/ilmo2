@@ -9,6 +9,7 @@ class ApplicationController < ActionController::Base
   filter_parameter_logging :password
   
   include UserAuthentication # /lib/user_authentication.rb
+  require 'RedCloth'
   
   before_filter :authentication_required
   before_filter :set_locale

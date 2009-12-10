@@ -1,8 +1,7 @@
 class CreateNews < ActiveRecord::Migration
   def self.up
     create_table :news do |t|
-      t.string :head
-      t.string :message
+      t.text :message
       t.timestamps
     end
   end

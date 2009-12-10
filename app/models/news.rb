@@ -1,6 +1,6 @@
 class News < ActiveRecord::Base
   
-  validates_presence_of :head, :message
+  validates_presence_of :message
   
   default_scope :order => 'updated_at DESC'
   
