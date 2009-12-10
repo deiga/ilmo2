@@ -12,14 +12,21 @@
 	<div id="whole">
 				
 		<h1 id="title"><%= link_to 'Ilmo 2.0', root_url%></h1>
-	
+		
+		
 		<div id="newsfeed" style="float:right">
 	   	<h2>Newsfeed</h2>
 			<ul>
 	   		<%= render :partial => "newsfeed/items", :collection => Newsfeed.recent %>
 			</ul>
 	 	</div>
-
+		<div id="news" style="float:right; margin-right: 10em;">
+			<h2>Administrative News:</h2>
+			<ul>
+				<%= render :partial => 'news/items', :collection => News.recent %>
+			</ul>
+		</div>
+		
 		<% if flash[:notice] -%>
 			<div id="notice">
 				<%= flash[:notice] %>

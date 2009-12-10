@@ -4,7 +4,7 @@ namespace :utils do
     descr = %{Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.}
       
     desc "Seed application with everything"
-    task :all => [:roles, :categories, :users, :courses, :instances, :groups, :registrations]
+    task :all => [:roles, :categories, :users, :courses, :instances, :groups, :registrations, :rights]
 
     desc "Seed application with user roles"
     task :roles => :environment do
@@ -67,6 +67,12 @@ namespace :utils do
           group.users << user
         end
       end
+    end
+    
+    desc "Seed application with admins etc."
+    task :rights => [:environment, :roles] do
+      user = User.find_by_username('deiga')
+      user.roles << Role.find_by_name('admin')
     end
     
   end

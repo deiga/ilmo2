@@ -1,22 +1,23 @@
-<%= link_to "Back to the site", root_url %>
+<%= link_to 'Back to the site', root_url %>
  
 <ul>
-	<li><%= link_to "Users", admin_users_path %></li>
-	<li><%= link_to "Courses", admin_courses_path %>
+	<li><%= link_to 'News', admin_news_path %></li>
+	<li><%= link_to 'Users', admin_users_path %></li>
+	<li><%= link_to 'Courses', admin_courses_path %>
 		<ul>
-			<li><%= link_to "Course instances", admin_course_instances_path %></li>
-			<li><%= link_to "Exercise groups", admin_exercise_groups_path %></li>
+			<li><%= link_to 'Course instances', admin_course_instances_path %></li>
+			<li><%= link_to 'Exercise groups', admin_exercise_groups_path %></li>
 		</ul>
 	</li>
-	 <li>Misc:
-    <ul>
-      <li><%= link_to "Roles", admin_roles_path %></li>
-      <li><%= link_to "Rights", admin_rights_path %></li>
-      <li><%= link_to "Registrations", admin_registrations_path %></li>
-			<li><%= link_to "Categories", admin_categories_path %></li>
-			<li><%= link_to "Course categories", admin_course_categories_path %></li>
+	<li>Misc:
+		<ul>
+    	<li><%= link_to 'Roles', admin_roles_path %></li>
+      <li><%= link_to 'Rights', admin_rights_path %></li>
+      <li><%= link_to 'Registrations', admin_registrations_path %></li>
+			<li><%= link_to 'Categories', admin_categories_path %></li>
+			<li><%= link_to 'Course categories', admin_course_categories_path %></li>
     </ul>
   </li>
- <li><%= link_to "Send mail", admin_mailer_path %></li>
+ 	<li><%= link_to 'Send mail', admin_mailer_path %></li>
 </ul>
  
