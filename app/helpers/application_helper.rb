@@ -7,7 +7,4 @@ module ApplicationHelper
     Time.now.strftime("%d.%m.%Y %H:%M")
   end
   
-  def linkkihelppi(fst, snd)
-    "Ensimmäinen: #{fst} ja toinen #{snd}"
-  end
 end
