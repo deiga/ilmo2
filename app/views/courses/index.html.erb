@@ -2,7 +2,6 @@
 <h2>Courses available</h2>
 <p><%= link_to "All courses as PDF", courses_url(:format => :pdf) %></p>
 
-
 <div id="courses">
 	<% Category.all.each do |cat| %>
 		<%= content_tag :h3, cat.name %>
@@ -13,11 +12,18 @@
 			<% end %>
 			</ul>
 		<% else %>
-			No courses under this category
+			<p>No courses under this category</p>
 		<% end %>
 	<% end %>
-	
 </div>
+
+<div id="news" style="float:right">
+	<h2>News:</h2>
+	<ul>
+	   		
+	</ul>
+</div>
+	
 <div id="chart">
 	<%= @swf.insert_chart(:data_source => url_for(:controller => "/chart"), :width => "500", :height => "300") %> 
 </div>

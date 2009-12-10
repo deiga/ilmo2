@@ -153,10 +153,10 @@ class SWFChart
 			
 			#render chart data
 			x.chart_data{
-				for aa in @data_array do
+				for row in @data_array do
 					x.row{
-						for a in aa do
-							x.__send__(get_type(a),a)
+						for item in row do
+							x.__send__(get_type(item),item)
 						end
 					}
 				end

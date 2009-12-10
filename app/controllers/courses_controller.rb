@@ -12,11 +12,11 @@ class CoursesController < ApplicationController
     @swf.data_array[0] = [nil]
     @swf.data_array[1] = ['']
 
-    #get space count per category
-    #for c in @current_show.ShowCategories
-    #  @swf.data_array[0] << c.name
-    #  @swf.data_array[1] << c.BaseSpaces.count
-    #end
+    #get course count per category
+    Category.all.each do |category|
+      @swf.data_array[0] << category.name
+      @swf.data_array[1] << category.courses.size
+    end
     @swf.chart_type = "3d pie"
     @swf.chart_rect = {:x => '150',:width => '200',:height => '125'}
     @swf.legend_rect = {:x => 10, :y => 10, :width => 50, :height => 200}
