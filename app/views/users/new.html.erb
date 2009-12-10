@@ -1,6 +1,6 @@
 <h2 id="register">Registering to Ilmo 2.0</h2>
 
-<% form_for @user do |f| %> <!-- removed , :url => { :action => :create } -->
+<% form_for User.new do |f| %>
 	<%= f.error_messages %>
 	
 	<p>

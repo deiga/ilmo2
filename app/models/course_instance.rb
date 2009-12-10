@@ -19,4 +19,12 @@ class CourseInstance < ActiveRecord::Base
     max_exercise_groups && max_exercise_groups > 1
   end
   
+  def name
+    name = "#{season} #{start.year}"
+  end
+  
+  def full_name
+    name = "#{course.title} - #{season} #{start.year}"
+  end
+  
 end

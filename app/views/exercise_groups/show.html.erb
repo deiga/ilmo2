@@ -1,6 +1,5 @@
-<h2 id="course_title"><%=h @exercise_group.course_instance.course.title %>
-<%=h @exercise_group.course_instance.season %> <%=h @exercise_group.course_instance.start.year %></h2>
-<h3><%=h "#{@exercise_group.weekday} #{@exercise_group.start} - #{@exercise_group.end}" %></h3>
+<h2 id="course_title"><%=h @exercise_group.course_instance.full_name %></h2>
+<h3><%=h "#{@exercise_group.name}" %></h3>
 
 <h4>Registered users:</h4>
 <p id="attendees">

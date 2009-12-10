@@ -15,7 +15,7 @@
 	<% if @course.course_instances.any? %>
 	<ul>
 		<% @course_instances.each do |inst| %>
-   	<li><%= link_to "#{inst.season} #{inst.start.year}", inst %></li>
+   	<li><%= link_to inst.name, inst %></li>
 		<% end %>
 	</ul>
 	<% else %>

@@ -1,0 +1,14 @@
+<h2 id="register">Feedback for: </h2>
+<h3><%= @ci.full_name %></h3>
+
+<% form_for [@ci, Feedback.new] do |f| %>
+	<%= f.error_messages %>
+	
+	<p>
+		<%= f.label :message, 'Feedback:' %><br />
+		<%= f.text_area :message %>
+	</p>
+	<%= f.submit 'Submit' %>
+<% end %>
+
+<%= link_to 'Back', course_instance_path(@ci) %>

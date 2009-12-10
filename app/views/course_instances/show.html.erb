@@ -2,7 +2,7 @@
 <br />
 <fieldset>
 	<legend>
-		<strong><%=h @course_instance.course.title %> - <%=h "#{@course_instance.season} #{@course_instance.start.year}"%></strong>
+		<strong><%=h @course_instance.full_name %></strong>
 	</legend>
 
 	<p id="description">
@@ -15,7 +15,7 @@
 	<% if @course_instance.exercise_groups.any? %>
 	<ol>
 		<% @course_instance.exercise_groups.each do |eg| %>
-   	<li><%= link_to "#{eg.weekday} #{eg.start}-#{eg.end} #{eg.place}", eg %></li>
+   	<li><%= link_to "#{eg.name} #{eg.place}", eg %></li>
 		<% end %>
 	</ol>
 	<% else %>
@@ -25,8 +25,8 @@
 <div id="feedback">
 	<h4>Course feedback:</h4>
 	<ul>
-		<%= render :partial => 'feedbacks/items', :collection => Feedback.course(@course_instance.id) %>
+		<%= render :partial => 'newsfeed/items', :collection => Feedback.course(@course_instance.id) %>
 	</ul>
 </div>
 
-<%= link_to 'Back', @course_instance.course %> <!-- | <%= link_to 'New Exercise group', new_course_instance_exercise_group_url(@course_instance) %> --> | <%= link_to 'Give feedback', new_feedback_url(@course_instance) %>
+<%= link_to 'Back', @course_instance.course %> <!-- | <%= link_to 'New Exercise group', new_course_instance_exercise_group_url(@course_instance) %> --> | <%= link_to 'Give feedback', new_feedback_url(:instance_id => @course_instance.id) %>
