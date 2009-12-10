@@ -24,7 +24,7 @@ class CoursesController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.rss
-      format.mp3 { send_data Course.talk_course_names(@courses) }
+      format.mp3  { send_data Course.talk_course_names(@courses) }
       format.json
       format.xml  { render :xml => @courses }
       format.pdf  { send_data PdfExport.all_courses(@courses) }
@@ -38,60 +38,6 @@ class CoursesController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @course }
-    end
-  end
-
-  def new
-    @course = Course.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @course }
-    end
-  end
-
-  def edit
-    @course = Course.find(params[:id])
-  end
-
-  def create
-    @course = Course.new(params[:course])
-
-    respond_to do |format|
-      if @course.save
-        flash[:msg] = :course_successful
-        format.html { redirect_to(@course) }
-        format.xml  { render :xml => @course, :status => :created, :location => @course }
-      else
-        flash[:notice] = :course_unsuccessful
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @course.errors, :status => :unprocessable_entity }
-      end
-    end
-  end
-
-  def update
-    @course = Course.find(params[:id])
-
-    respond_to do |format|
-      if @course.update_attributes(params[:course])
-        flash[:notice] = 'Course was successfully updated.'
-        format.html { redirect_to(@course) }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @course.errors, :status => :unprocessable_entity }
-      end
-    end
-  end
-
-  def destroy
-    @course = Course.find(params[:id])
-    @course.destroy
-
-    respond_to do |format|
-      format.html { redirect_to(courses_url) }
-      format.xml  { head :ok }
     end
   end
   
