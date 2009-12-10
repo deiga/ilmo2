@@ -26,7 +26,7 @@
 	<h4>Course feedback:</h4>
 	<ul>
 		<%= render :partial => 'feedbacks/items', :collection => Feedback.course(@course_instance.id) %>
-	</ul7>
+	</ul>
 </div>
 
-<%= link_to 'Back', @course_instance.course %> | <%= link_to 'New Exercise group', new_course_instance_exercise_group_url(@course_instance) %> | <%= link_to 'Give feedback', new_feedback_url(@course_instance) %>
+<%= link_to 'Back', @course_instance.course %> <!-- | <%= link_to 'New Exercise group', new_course_instance_exercise_group_url(@course_instance) %> --> | <%= link_to 'Give feedback', new_feedback_url(@course_instance) %>
