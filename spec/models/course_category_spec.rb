@@ -4,7 +4,7 @@ describe CourseCategory do
   before(:each) do
     @valid_attributes = {
       :course_id => 1,
-      :name => "value for name"
+      :category_id => 1
     }
   end
 

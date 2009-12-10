@@ -20,11 +20,11 @@ class CourseInstance < ActiveRecord::Base
   end
   
   def name
-    name = "#{season} #{start.year}"
+    "#{season} #{start.year}"
   end
   
   def full_name
-    name = "#{course.title} - #{season} #{start.year}"
+     "#{course.title} - #{name}"
   end
   
 end

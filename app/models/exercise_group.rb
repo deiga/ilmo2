@@ -10,7 +10,11 @@ class ExerciseGroup < ActiveRecord::Base
   validates_format_of :weekday, :with => /^Mon|Tue|Wed|Thu|Fri+$/, :message => "is invalid"
   
   def name
-    name = "#{weekday} #{start}-#{self.end}"
+    "#{weekday} #{start}-#{self.end}"
+  end
+  
+  def full_name
+    "#{name} #{place}"
   end
   
 end

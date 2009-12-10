@@ -3,8 +3,8 @@ require 'spec_helper'
 describe Right do
   before(:each) do
     @valid_attributes = {
-      :user_id => 1,
-      :role_id => 1
+      :user_id => 2,
+      :role_id => 2
     }
   end
 

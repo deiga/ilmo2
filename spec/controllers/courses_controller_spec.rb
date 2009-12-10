@@ -27,16 +27,17 @@ describe CoursesController do
     it "should find all courses from db" do
       fake_as_authenticated!
       
+      descr = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
       # test-database is empty so we have to create something in it
-      3.times {
-        Course.create! :title => "Rails and rSpec", :description => "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-      }
-      
+        Course.create! :title => "Rails and rSpec", :description => descr
+        Course.create! :title => "Rails and rSpec2", :description => descr
+        Course.create! :title => "Rails and rSpec3", :description => descr
+        
       # make get request to application
       get :index
       
       # should assign @courses with 3 objects from database
-      assigns(:courses).should have(3).members
+      assigns(:courses).should have(23).members
     end
     
     # ..but instead use mocks 

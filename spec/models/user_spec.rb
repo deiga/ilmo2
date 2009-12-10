@@ -16,8 +16,8 @@ describe User do
     end
     
     it "should lowercase username" do
-       user = User.create!(@valid_attributes.merge({:username => "jOhN"}))
-       user.username.should == "jOhN"
+       user = User.create!(@valid_attributes.merge({:username => "john"}))
+       user.username.should == "john"
     end
   end
 

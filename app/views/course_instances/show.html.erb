@@ -15,7 +15,7 @@
 	<% if @course_instance.exercise_groups.any? %>
 	<ol>
 		<% @course_instance.exercise_groups.each do |eg| %>
-   	<li><%= link_to "#{eg.name} #{eg.place}", eg %></li>
+   	<li><%= link_to "#{eg.full_name}", eg %></li>
 		<% end %>
 	</ol>
 	<% else %>
@@ -25,6 +25,7 @@
 <div id="feedback">
 	<h4>Course feedback:</h4>
 	<ul>
+		<%-# newsfeed/items has the exact same code as a feedbacks/items would have, thus using the other one %>
 		<%= render :partial => 'newsfeed/items', :collection => Feedback.course(@course_instance.id) %>
 	</ul>
 </div>

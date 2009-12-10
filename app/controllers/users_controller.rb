@@ -6,14 +6,14 @@ class UsersController < ApplicationController
   end
   
   def edit
-    @user = User.find params[:id]
+    @user = current_user
     @registered_groups = @user.exercise_groups
   end
   
   def create
-    @user = User.new params[:user]
+    user = User.create params[:user]
     
-    if @user.save
+    if user.errors.size == 0
       flash[:msg] = t :account_created
       redirect_to login_url
     else
@@ -23,10 +23,10 @@ class UsersController < ApplicationController
   end
   
   def update
-    @user = User.find params[:id]
+    user = User.find params[:id]
     
-    if @user.update_attributes(params[:user])
-      flash[:msg] = t :account_updated
+    if user.update_attributes(params[:user])
+      flash[:msg] = t :update_successful
       redirect_to root_url
     else
       flash[:notice] = t :update_unsuccessful

@@ -3,7 +3,7 @@ require 'spec_helper'
 describe News do
   before(:each) do
     @valid_attributes = {
-      
+     :message => "Lorem" 
     }
   end
 

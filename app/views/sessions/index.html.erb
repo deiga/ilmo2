@@ -5,5 +5,6 @@
     <%= f.text_field :username, :size => 15 %><br />
     <%= f.label :password, 'Password' %>:
     <%= f.password_field :password, :size => 15 %><br />
-		<%= link_to :Register, :new_user%> <%= f.submit "OK" %>
+		<%= f.submit "OK" %>
 <% end %>
+<%= link_to :Register, :new_user%>
