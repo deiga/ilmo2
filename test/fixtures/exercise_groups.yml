@@ -1,13 +1,15 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  course_instance: 
-  weekday: MyString
-  time_of_day: MyString
-  class: MyString
+  course_instance_id: 1
+  weekday: Mon
+  start: 10
+  end: 12
+  place: BK110
 
 two:
-  course_instance: 
-  weekday: MyString
-  time_of_day: MyString
-  class: MyString
+  course_instance_id: 2
+  weekday: Tue
+  start: 12
+  end: 14
+  place: CK110

@@ -23,17 +23,9 @@
 				<%= render :partial => 'news/items', :collection => News.recent %>
 		</div>
 		
-		<% if flash[:notice] -%>
-			<div id="notice">
-				<%= flash[:notice] %>
-			</div>
-		<% end -%>
-	
-		<% if flash[:msg] -%>
-			<div id="message">
-				<%= flash[:msg] %>
-			</div>
-		<% end -%>
+ 		<% flash.each do |key,msg| %>  
+			<%= content_tag :div, msg, :id => key %>  
+		<% end %>  
 	
 		<div id="logged_status">
 			<%=t :welcome %>, 

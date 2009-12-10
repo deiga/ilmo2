@@ -5,4 +5,9 @@ class CourseTest < ActiveSupport::TestCase
   test "the truth" do
     assert true
   end
+  
+  test "Valid course with title and description" do  
+    course = Course.new(:title => "TestCourse", :description => "Smith")  
+    assert_equal 'TestCourse', course.title
+  end  
 end

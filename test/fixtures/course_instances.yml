@@ -1,11 +1,9 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  title: MyString
-  course: 
-  exercise_groups: 
+  season: Fall
+  course_id: 1
 
 two:
-  title: MyString
-  course: 
-  exercise_groups: 
+  season: Autumn
+  course_id: 2 

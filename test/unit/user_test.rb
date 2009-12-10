@@ -59,7 +59,7 @@ class UserTest < ActiveSupport::TestCase
     @longbob.realname = "Timo Joachim Sand"
     assert @longbob.save
     @longbob.realname = ""
-    assert !@longbob.save
+    assert @longbob.save
   end
 
   def test_passwordchange

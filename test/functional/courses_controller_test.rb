@@ -3,13 +3,13 @@ require 'test_helper'
 class CoursesControllerTest < ActionController::TestCase
   test "should get index" do
     get :index
-    assert_response :success
+    assert_response :redirect
     assert_not_nil assigns(:courses)
   end
 
   test "should get new" do
     get :new
-    assert_response :success
+    assert_response :redirect
   end
 
   test "should create course" do
@@ -22,12 +22,12 @@ class CoursesControllerTest < ActionController::TestCase
 
   test "should show course" do
     get :show, :id => courses(:one).to_param
-    assert_response :success
+    assert_response :redirect
   end
 
   test "should get edit" do
     get :edit, :id => courses(:one).to_param
-    assert_response :success
+    assert_response :redirect
   end
 
   test "should update course" do
