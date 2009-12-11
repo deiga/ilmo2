@@ -42,7 +42,7 @@ paperclip can make use of it when configured so -->
 <% if @registered_groups.any? %>
 	<ul>
 		<% @registered_groups.each do |rg| %>
-			<li><%= link_to "#{rg.course_instance.course.title} - #{rg.course_instance.season} #{rg.course_instance.start.year} - #{rg.weekday} #{rg.start}-#{rg.end}", exercise_group_url(rg) %> - <%= link_to 'Cancel registration', registration_url(rg.registrations.find_by_user_id(current_user), :user_id => @user, :group_id => rg), :method => :delete %></li>
+			<li><%= link_to "#{rg.course_instance.full_name} - #{rg.name}", exercise_group_url(rg) %> - <%= link_to 'Cancel registration', registration_url(rg, :user_id => @user, :group_id => rg), :method => :delete %></li>
 		<% end %>
 	</ul>
 <% else %>

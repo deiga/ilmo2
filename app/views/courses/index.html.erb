@@ -4,9 +4,9 @@
 
 <div id="courses">
 	<% Category.all.each do |cat| %>
-		<%= content_tag :h3, cat.name %>
+		<%= content_tag :h3, h( cat.name ) %>
 		<% if cat.courses.any? %>
-			<%= tag :ul, {:id => cat.name.downcase.split(' ')[0]+'CourseListing' } %>
+			<%= tag :ul, {:id => h( cat.name.downcase.split(' ')[0] )+'CourseListing' } %>
 			<% cat.courses.each do |course| -%>
 				<li><%= link_to (h course.title), course %></li>
 			<% end %>

@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   
   def edit
     @user = current_user
-    @registered_groups = @user.exercise_groups
+    @registered_groups = ExerciseGroup.find(:all, :include => [:registrations, :course_instance])# @user.exercise_groups
   end
   
   def create
